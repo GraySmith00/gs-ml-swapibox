@@ -6,18 +6,50 @@ import ScrollText from '../ScrollText';
 import CategoryContainer from '../CategoryContainer';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentCategory: ''
+    };
+  }
+
+  setCurrentCategory = e => {
+    this.setState({
+      currentCategory: e.target.value
+    });
+  };
+
   render() {
+    const { currentCategory } = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">SWAPIbox</h1>
         </header>
         <nav className="nav-btns">
-          <button className="people-btn">People</button>
-          <button className="planets-btn">Planets</button>
-          <button className="vehicles-btn">Vehicles</button>
+          <button
+            onClick={this.setCurrentCategory}
+            className="people-btn"
+            value="people"
+          >
+            People
+          </button>
+          <button
+            onClick={this.setCurrentCategory}
+            className="planets-btn"
+            value="planets"
+          >
+            Planets
+          </button>
+          <button
+            onClick={this.setCurrentCategory}
+            className="vehicles-btn"
+            value="vehicles"
+          >
+            Vehicles
+          </button>
         </nav>
-        <CategoryContainer />
+        <CategoryContainer currentCategory={currentCategory} />
         <ScrollText />
       </div>
     );

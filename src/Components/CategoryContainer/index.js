@@ -1,12 +1,13 @@
-import React from 'react';
-import './CategoryContainer.css';
+import React, { Component } from 'react';
 
-const CategoryContainer = () => {
-  return (
-    <div className="category-container">
-      <h1>CategoryContainer</h1>
-    </div>
-  );
-};
+class CategoryContainer extends Component {
+  render() {
+    return (
+      <div className="category-container">
+        <h1>CategoryContainer</h1>
+      </div>
+    );
+  }
+}
 
 export default CategoryContainer;

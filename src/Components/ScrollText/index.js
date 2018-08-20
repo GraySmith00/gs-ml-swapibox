@@ -15,15 +15,16 @@ class ScrollText extends Component {
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-        // randomOpeningQuote(data);
-      });
+        const currentQuote = randomOpeningQuote(data);
+        this.setState({ currentQuote });
+      })
+      .catch(error => console.log(error));
   }
 
   render() {
     return (
       <div>
-        <h1>ScrollText</h1>
+        <p>{this.state.currentQuote}</p>
       </div>
     );
   }

@@ -11,7 +11,7 @@ class ScrollText extends Component {
   }
 
   componentDidMount() {
-    const url = "https://swapi.co/api/films";
+    const url = "https://swapi.co/api/films/";
     fetch(url)
       .then(res => res.json())
       .then(data => {

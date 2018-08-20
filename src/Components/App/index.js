@@ -7,8 +7,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">SWAPI-box</h1>
+          <h1 className="App-title">SWAPIbox</h1>
         </header>
+        <ScrollText />
       </div>
     );
   }

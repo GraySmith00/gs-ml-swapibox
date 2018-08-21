@@ -26,7 +26,11 @@ export const peopleList = data => {
           return { ...promiseData, ...promise };
         }, {})
       )
-      .then(promiseData => ({ name: person.name, ...promiseData }));
+      .then(promiseData => ({
+        name: person.name,
+        ...promiseData,
+        favorite: false
+      }));
   });
 
   return Promise.all(unresolvedPromises);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchData, peopleList } from '../../helpers';
+import { fetchData, peopleList, planetList } from '../../helpers';
 
 class CategoryContainer extends Component {
   constructor() {
@@ -22,31 +22,19 @@ class CategoryContainer extends Component {
               })
             );
           }
+          if (currentCategory === 'planets') {
+            planetList(data).then(currentData =>
+              this.setState({
+                currentData
+              })
+            );
+          }
         });
     }
-
-    // if (currentCategory) {
-    //   fetchData(url)
-    //     .then(res => res.json())
-    //     .then(data => {
-    //       console.log(data);
-    //       // let currentData;
-    //       // if (currentCategory === 'people') {
-    //       //   currentData = peopleList(data);
-
-    //       //   console.log(currentData);
-    //       //   // this.setState({
-    //       //   //   currentData
-    //       //   // });
-    //       // }
-    //     })
-    //     .catch(error => console.log(error));
-    // }
   }
 
   render() {
     if (this.props.currentCategory) {
-      // console.log(this.state.currentData);
     }
 
     return (

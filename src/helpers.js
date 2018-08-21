@@ -36,6 +36,25 @@ export const peopleList = data => {
   return Promise.all(unresolvedPromises);
 };
 
+export const planetList = data => {
+  const unresolvedPromises = data.results.map(planet => {
+    const { name, terrain, population, climate } = planet;
+    const residentsPromises = planet.residents.map(resident => {
+      return fetchData(resident)
+        .then(res => res.json())
+        .then(data => data.name);
+    });
+    return Promise.all(residentsPromises).then(residents => ({
+      name,
+      terrain,
+      climate,
+      population,
+      residents
+    }));
+  });
+  return Promise.all(unresolvedPromises);
+};
+
 export const fetchData = url => {
   return fetch(url);
 };

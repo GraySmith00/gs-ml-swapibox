@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchData, peopleList, planetList } from '../../helpers';
+import { fetchData, peopleList, planetList, vehicleList } from '../../helpers';
 
 class CategoryContainer extends Component {
   constructor() {
@@ -28,6 +28,11 @@ class CategoryContainer extends Component {
                 currentData
               })
             );
+          }
+          if (currentCategory === 'vehicles') {
+            this.setState({
+              currentData: vehicleList(data)
+            });
           }
         });
     }

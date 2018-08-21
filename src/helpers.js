@@ -12,13 +12,8 @@ export const randomFilmData = filmData => {
 
 export const peopleList = data => {
   const unresolvedPromises = data.results.map(person => {
-    const homeWorldPromise = fetchData(person.homeworld)
-      .then(res => res.json())
-      .then(data => ({ planet: data.name, population: data.population }));
-
-    const speciesPromise = fetchData(person.species[0])
-      .then(res => res.json())
-      .then(data => ({ species: data.name }));
+    const homeWorldPromise = getHomeworldData(person);
+    const speciesPromise = getSpeciesData(person);
 
     return Promise.all([homeWorldPromise, speciesPromise])
       .then(res =>
@@ -36,6 +31,18 @@ export const peopleList = data => {
   return Promise.all(unresolvedPromises);
 };
 
+const getHomeworldData = person => {
+  return fetchData(person.homeworld)
+    .then(res => res.json())
+    .then(data => ({ planet: data.name, population: data.population }));
+};
+
+const getSpeciesData = person => {
+  return fetchData(person.species[0])
+    .then(res => res.json())
+    .then(data => ({ species: data.name }));
+};
+
 export const planetList = data => {
   const unresolvedPromises = data.results.map(planet => {
     const { name, terrain, population, climate } = planet;
@@ -49,7 +56,8 @@ export const planetList = data => {
       terrain,
       climate,
       population,
-      residents
+      residents,
+      favorite: false
     }));
   });
   return Promise.all(unresolvedPromises);
@@ -58,7 +66,7 @@ export const planetList = data => {
 export const vehicleList = data => {
   return data.results.map(vehicle => {
     const { name, model, vehicle_class, passengers } = vehicle;
-    return { name, model, vehicle_class, passengers };
+    return { name, model, vehicle_class, passengers, favorite: false };
   });
 };
 

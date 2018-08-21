@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchData, peopleList } from '../../helpers';
+import { fetchData, peopleList, planetList, vehicleList } from '../../helpers';
 
 class CategoryContainer extends Component {
   constructor() {
@@ -10,26 +10,36 @@ class CategoryContainer extends Component {
   }
   componentDidUpdate() {
     const { currentCategory } = this.props;
-    const url = `https://swapi.co/api/${currentCategory}/`;
     if (currentCategory) {
+      const url = `https://swapi.co/api/${currentCategory}/`;
       fetchData(url)
         .then(res => res.json())
         .then(data => {
-          let currentData;
           if (currentCategory === 'people') {
-            currentData = peopleList(data);
+            peopleList(data).then(currentData =>
+              this.setState({
+                currentData
+              })
+            );
+          }
+          if (currentCategory === 'planets') {
+            planetList(data).then(currentData =>
+              this.setState({
+                currentData
+              })
+            );
+          }
+          if (currentCategory === 'vehicles') {
             this.setState({
-              currentData
+              currentData: vehicleList(data)
             });
           }
-        })
-        .catch(error => console.log(error));
+        });
     }
   }
 
   render() {
     if (this.props.currentCategory) {
-      console.log(this.state.currentData);
     }
 
     return (

@@ -11,25 +11,62 @@ export const randomFilmData = filmData => {
 };
 
 export const peopleList = data => {
-  return data.results.map(person => {
-    let personData = {
-      name: person.name
-    };
-    fetchData(person.homeworld)
-      .then(res => res.json())
-      .then(planetData => {
-        personData.homeworld = planetData.name;
-        personData.population = planetData.population;
-      })
-      .catch(error => console.log(error));
-    fetchData(person.species[0])
-      .then(res => res.json())
-      .then(speciesData => {
-        personData.species = speciesData.name;
-        personData.language = speciesData.language;
-      })
-      .catch(error => console.log(error));
-    return personData;
+  const unresolvedPromises = data.results.map(person => {
+    const homeWorldPromise = getHomeworldData(person);
+    const speciesPromise = getSpeciesData(person);
+
+    return Promise.all([homeWorldPromise, speciesPromise])
+      .then(res =>
+        res.reduce((promiseData, promise) => {
+          return { ...promiseData, ...promise };
+        }, {})
+      )
+      .then(promiseData => ({
+        name: person.name,
+        ...promiseData,
+        favorite: false
+      }));
+  });
+
+  return Promise.all(unresolvedPromises);
+};
+
+const getHomeworldData = person => {
+  return fetchData(person.homeworld)
+    .then(res => res.json())
+    .then(data => ({ planet: data.name, population: data.population }));
+};
+
+const getSpeciesData = person => {
+  return fetchData(person.species[0])
+    .then(res => res.json())
+    .then(data => ({ species: data.name }));
+};
+
+export const planetList = data => {
+  const unresolvedPromises = data.results.map(planet => {
+    const { name, terrain, population, climate } = planet;
+    const residentsPromises = planet.residents.map(resident => {
+      return fetchData(resident)
+        .then(res => res.json())
+        .then(data => data.name);
+    });
+    return Promise.all(residentsPromises).then(residents => ({
+      name,
+      terrain,
+      climate,
+      population,
+      residents,
+      favorite: false
+    }));
+  });
+  return Promise.all(unresolvedPromises);
+};
+
+export const vehicleList = data => {
+  return data.results.map(vehicle => {
+    const { name, model, vehicle_class, passengers } = vehicle;
+    return { name, model, vehicle_class, passengers, favorite: false };
   });
 };
 

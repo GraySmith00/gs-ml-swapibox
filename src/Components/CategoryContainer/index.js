@@ -10,26 +10,43 @@ class CategoryContainer extends Component {
   }
   componentDidUpdate() {
     const { currentCategory } = this.props;
-    const url = `https://swapi.co/api/${currentCategory}/`;
     if (currentCategory) {
+      const url = `https://swapi.co/api/${currentCategory}/`;
       fetchData(url)
         .then(res => res.json())
         .then(data => {
-          let currentData;
           if (currentCategory === 'people') {
-            currentData = peopleList(data);
-            this.setState({
-              currentData
-            });
+            peopleList(data).then(currentData =>
+              this.setState({
+                currentData
+              })
+            );
           }
-        })
-        .catch(error => console.log(error));
+        });
     }
+
+    // if (currentCategory) {
+    //   fetchData(url)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       console.log(data);
+    //       // let currentData;
+    //       // if (currentCategory === 'people') {
+    //       //   currentData = peopleList(data);
+
+    //       //   console.log(currentData);
+    //       //   // this.setState({
+    //       //   //   currentData
+    //       //   // });
+    //       // }
+    //     })
+    //     .catch(error => console.log(error));
+    // }
   }
 
   render() {
     if (this.props.currentCategory) {
-      console.log(this.state.currentData);
+      // console.log(this.state.currentData);
     }
 
     return (

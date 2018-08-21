@@ -11,26 +11,25 @@ export const randomFilmData = filmData => {
 };
 
 export const peopleList = data => {
-  return data.results.map(person => {
-    let personData = {
-      name: person.name
-    };
-    fetchData(person.homeworld)
+  const unresolvedPromises = data.results.map(person => {
+    const homeWorldPromise = fetchData(person.homeworld)
       .then(res => res.json())
-      .then(planetData => {
-        personData.homeworld = planetData.name;
-        personData.population = planetData.population;
-      })
-      .catch(error => console.log(error));
-    fetchData(person.species[0])
+      .then(data => ({ planet: data.name, population: data.population }));
+
+    const speciesPromise = fetchData(person.species[0])
       .then(res => res.json())
-      .then(speciesData => {
-        personData.species = speciesData.name;
-        personData.language = speciesData.language;
-      })
-      .catch(error => console.log(error));
-    return personData;
+      .then(data => ({ species: data.name }));
+
+    return Promise.all([homeWorldPromise, speciesPromise])
+      .then(res =>
+        res.reduce((promiseData, promise) => {
+          return { ...promiseData, ...promise };
+        }, {})
+      )
+      .then(promiseData => ({ name: person.name, ...promiseData }));
   });
+
+  return Promise.all(unresolvedPromises);
 };
 
 export const fetchData = url => {

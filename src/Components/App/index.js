@@ -13,9 +13,9 @@ class App extends Component {
     };
   }
 
-  setCurrentCategory = e => {
+  setCurrentCategory = event => {
     this.setState({
-      currentCategory: e.target.value
+      currentCategory: event.target.value
     });
   };
 

@@ -1,0 +1,32 @@
+.scrolltext-container {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+  perspective: 400px;
+  color: #feda4a;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  text-align: justify;
+  overflow: hidden; }
+
+.crawl {
+  position: relative;
+  top: -100px;
+  transform-origin: 50% 100%;
+  animation: crawl 8s linear;
+  animation-fill-mode: forwards; }
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    display: block;
+    transform: rotateX(20deg) translateZ(0); }
+  99% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px); }
+  100% {
+    display: none;
+    opacity: 0; } }

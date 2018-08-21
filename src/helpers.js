@@ -55,6 +55,13 @@ export const planetList = data => {
   return Promise.all(unresolvedPromises);
 };
 
+export const vehicleList = data => {
+  return data.results.map(vehicle => {
+    const { name, model, vehicle_class, passengers } = vehicle;
+    return { name, model, vehicle_class, passengers };
+  });
+};
+
 export const fetchData = url => {
   return fetch(url);
 };

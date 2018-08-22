@@ -1,13 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class CategoryContainer extends Component {
-  render() {
-    return (
-      <div className="category-container">
-        <h1>CategoryContainer</h1>
-      </div>
-    );
-  }
-}
+import CategoryCard from '../CategoryCard';
+
+const CategoryContainer = ({ currentData }) => {
+  let cards = currentData.map((item, index) => (
+    <CategoryCard key={`${item}-${index}`} {...item} />
+  ));
+
+  return (
+    <div className="category-container">
+      <h1>CategoryContainer</h1>
+      {cards}
+    </div>
+  );
+};
+
+CategoryContainer.propTypes = {
+  currentData: PropTypes.array.isRequired
+};
 
 export default CategoryContainer;

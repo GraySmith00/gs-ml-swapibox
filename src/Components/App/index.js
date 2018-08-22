@@ -33,24 +33,22 @@ class App extends Component {
     }
   };
 
-  setCurrentData = (currentCategory, data) => {
+  setCurrentData = async (currentCategory, data) => {
+    let currentData;
     switch (currentCategory) {
       case 'people':
-        peopleList(data).then(currentData =>
-          this.setState({ currentData, currentCategory })
-        );
+        currentData = await peopleList(data);
         break;
       case 'planets':
-        planetList(data).then(currentData =>
-          this.setState({ currentData, currentCategory })
-        );
+        currentData = await planetList(data);
         break;
       case 'vehicles':
-        this.setState({ currentData: vehicleList(data), currentCategory });
+        currentData = vehicleList(data);
         break;
       default:
         break;
     }
+    this.setState({ currentData, currentCategory });
   };
 
   handleNavClick = event => {

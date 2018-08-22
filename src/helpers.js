@@ -11,36 +11,47 @@ export const randomFilmData = filmData => {
 };
 
 export const peopleList = data => {
-  const unresolvedPromises = data.results.map(person => {
+  const unresolvedPromises = data.results.map(async person => {
     const homeWorldPromise = getHomeworldData(person);
     const speciesPromise = getSpeciesData(person);
 
-    return Promise.all([homeWorldPromise, speciesPromise])
-      .then(res =>
-        res.reduce((promiseData, promise) => {
-          return { ...promiseData, ...promise };
-        }, {})
-      )
-      .then(promiseData => ({
+    try {
+      const response = await Promise.all([homeWorldPromise, speciesPromise]);
+      const promiseData = response.reduce((promiseData, promise) => {
+        return { ...promiseData, ...promise };
+      }, {});
+      return {
         name: person.name,
         ...promiseData,
         favorite: false
-      }));
+      };
+    } catch (error) {
+      console.log(error.message);
+    }
   });
 
   return Promise.all(unresolvedPromises);
 };
 
-const getHomeworldData = person => {
-  return fetchData(person.homeworld)
-    .then(res => res.json())
-    .then(data => ({ planet: data.name, population: data.population }));
+const getHomeworldData = async person => {
+  try {
+    const response = await fetchData(person.homeworld);
+    const data = await response.json();
+    const { name: planet, population } = data;
+    return { planet, population };
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
-const getSpeciesData = person => {
-  return fetchData(person.species[0])
-    .then(res => res.json())
-    .then(data => ({ species: data.name }));
+const getSpeciesData = async person => {
+  try {
+    const response = await fetchData(person.species[0]);
+    const data = await response.json();
+    return { species: data.name };
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export const planetList = data => {

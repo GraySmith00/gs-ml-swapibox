@@ -20,14 +20,16 @@ class App extends Component {
     this.setCurrentCategory('people');
   }
 
-  setCurrentCategory = currentCategory => {
-    if (currentCategory) {
-      const url = `https://swapi.co/api/${currentCategory}/`;
-      fetch(url)
-        .then(res => res.json())
-        .then(data => {
-          this.setCurrentData(currentCategory, data);
-        });
+  setCurrentCategory = async currentCategory => {
+    try {
+      if (currentCategory) {
+        const url = `https://swapi.co/api/${currentCategory}/`;
+        const response = await fetch(url);
+        const data = await response.json();
+        this.setCurrentData(currentCategory, data);
+      }
+    } catch (error) {
+      console.log(error.message);
     }
   };
 

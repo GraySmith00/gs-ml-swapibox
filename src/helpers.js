@@ -55,21 +55,30 @@ const getSpeciesData = async person => {
 };
 
 export const planetList = data => {
-  const unresolvedPromises = data.results.map(planet => {
+  const unresolvedPromises = data.results.map(async planet => {
     const { name, terrain, population, climate } = planet;
     const residentsPromises = planet.residents.map(async resident => {
-      const response = await fetch(resident);
-      const data = await response.json();
-      return data.name;
+      try {
+        const response = await fetch(resident);
+        const data = await response.json();
+        return data.name;
+      } catch (error) {
+        console.log(error.message);
+      }
     });
-    return Promise.all(residentsPromises).then(residents => ({
-      name,
-      terrain,
-      climate,
-      population,
-      residents,
-      favorite: false
-    }));
+    try {
+      const residents = await Promise.all(residentsPromises);
+      return {
+        name,
+        terrain,
+        climate,
+        population,
+        residents,
+        favorite: false
+      };
+    } catch (error) {
+      console.log(error.message);
+    }
   });
   return Promise.all(unresolvedPromises);
 };

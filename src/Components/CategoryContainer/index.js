@@ -1,53 +1,23 @@
-import React, { Component } from 'react';
-import { fetchData, peopleList, planetList, vehicleList } from '../../helpers';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class CategoryContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentData: []
-    };
-  }
-  componentDidUpdate() {
-    const { currentCategory } = this.props;
-    if (currentCategory) {
-      const url = `https://swapi.co/api/${currentCategory}/`;
-      fetchData(url)
-        .then(res => res.json())
-        .then(data => {
-          if (currentCategory === 'people') {
-            peopleList(data).then(currentData =>
-              this.setState({
-                currentData
-              })
-            );
-          }
-          if (currentCategory === 'planets') {
-            planetList(data).then(currentData =>
-              this.setState({
-                currentData
-              })
-            );
-          }
-          if (currentCategory === 'vehicles') {
-            this.setState({
-              currentData: vehicleList(data)
-            });
-          }
-        });
-    }
-  }
+import CategoryCard from '../CategoryCard';
 
-  render() {
-    if (this.props.currentCategory) {
-    }
+const CategoryContainer = ({ currentData }) => {
+  let cards = currentData.map((item, index) => (
+    <CategoryCard key={`${item}-${index}`} {...item} />
+  ));
 
-    return (
-      <div className="category-container">
-        <h1>CategoryContainer</h1>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="category-container">
+      <h1>CategoryContainer</h1>
+      {cards}
+    </div>
+  );
+};
+
+CategoryContainer.propTypes = {
+  currentData: PropTypes.array.isRequired
+};
 
 export default CategoryContainer;

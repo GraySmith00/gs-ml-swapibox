@@ -1,47 +1,7 @@
 import React, { Component } from 'react';
-import { fetchData, peopleList, planetList, vehicleList } from '../../helpers';
 
 class CategoryContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentData: []
-    };
-  }
-  componentDidUpdate() {
-    const { currentCategory } = this.props;
-    if (currentCategory) {
-      const url = `https://swapi.co/api/${currentCategory}/`;
-      fetchData(url)
-        .then(res => res.json())
-        .then(data => {
-          if (currentCategory === 'people') {
-            peopleList(data).then(currentData =>
-              this.setState({
-                currentData
-              })
-            );
-          }
-          if (currentCategory === 'planets') {
-            planetList(data).then(currentData =>
-              this.setState({
-                currentData
-              })
-            );
-          }
-          if (currentCategory === 'vehicles') {
-            this.setState({
-              currentData: vehicleList(data)
-            });
-          }
-        });
-    }
-  }
-
   render() {
-    if (this.props.currentCategory) {
-    }
-
     return (
       <div className="category-container">
         <h1>CategoryContainer</h1>

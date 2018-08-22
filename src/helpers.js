@@ -10,6 +10,35 @@ export const randomFilmData = filmData => {
   return openingCrawls[index];
 };
 
+export const initialFetchCall = async currentCategory => {
+  try {
+    const url = `https://swapi.co/api/${currentCategory}/`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return setCurrentData(currentCategory, data);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+const setCurrentData = async (currentCategory, data) => {
+  let currentData;
+  switch (currentCategory) {
+    case 'people':
+      currentData = await peopleList(data);
+      break;
+    case 'planets':
+      currentData = await planetList(data);
+      break;
+    case 'vehicles':
+      currentData = vehicleList(data);
+      break;
+    default:
+      break;
+  }
+  return currentData;
+};
+
 export const peopleList = data => {
   const unresolvedPromises = data.results.map(async person => {
     const homeWorldPromise = getHomeworldData(person);

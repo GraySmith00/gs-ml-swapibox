@@ -35,7 +35,7 @@ export const peopleList = data => {
 
 const getHomeworldData = async person => {
   try {
-    const response = await fetchData(person.homeworld);
+    const response = await fetch(person.homeworld);
     const data = await response.json();
     const { name: planet, population } = data;
     return { planet, population };
@@ -46,7 +46,7 @@ const getHomeworldData = async person => {
 
 const getSpeciesData = async person => {
   try {
-    const response = await fetchData(person.species[0]);
+    const response = await fetch(person.species[0]);
     const data = await response.json();
     return { species: data.name };
   } catch (error) {
@@ -57,10 +57,10 @@ const getSpeciesData = async person => {
 export const planetList = data => {
   const unresolvedPromises = data.results.map(planet => {
     const { name, terrain, population, climate } = planet;
-    const residentsPromises = planet.residents.map(resident => {
-      return fetchData(resident)
-        .then(res => res.json())
-        .then(data => data.name);
+    const residentsPromises = planet.residents.map(async resident => {
+      const response = await fetch(resident);
+      const data = await response.json();
+      return data.name;
     });
     return Promise.all(residentsPromises).then(residents => ({
       name,
@@ -79,8 +79,4 @@ export const vehicleList = data => {
     const { name, model, vehicle_class, passengers } = vehicle;
     return { name, model, vehicle_class, passengers, favorite: false };
   });
-};
-
-export const fetchData = url => {
-  return fetch(url);
 };

@@ -5,7 +5,7 @@ import './App.css';
 import ScrollText from '../ScrollText';
 import CategoryContainer from '../CategoryContainer';
 
-import { fetchData, peopleList, planetList, vehicleList } from '../../helpers';
+import { peopleList, planetList, vehicleList } from '../../helpers';
 
 class App extends Component {
   constructor() {
@@ -23,7 +23,7 @@ class App extends Component {
   setCurrentCategory = currentCategory => {
     if (currentCategory) {
       const url = `https://swapi.co/api/${currentCategory}/`;
-      fetchData(url)
+      fetch(url)
         .then(res => res.json())
         .then(data => {
           this.setCurrentData(currentCategory, data);

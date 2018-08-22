@@ -35,25 +35,16 @@ class App extends Component {
     switch (currentCategory) {
       case 'people':
         peopleList(data).then(currentData =>
-          this.setState({
-            currentData,
-            currentCategory
-          })
+          this.setState({ currentData, currentCategory })
         );
         break;
       case 'planets':
         planetList(data).then(currentData =>
-          this.setState({
-            currentData,
-            currentCategory
-          })
+          this.setState({ currentData, currentCategory })
         );
         break;
       case 'vehicles':
-        this.setState({
-          currentData: vehicleList(data),
-          currentCategory
-        });
+        this.setState({ currentData: vehicleList(data), currentCategory });
         break;
       default:
         break;
@@ -65,7 +56,7 @@ class App extends Component {
   };
 
   render() {
-    const { currentCategory } = this.state;
+    const { currentData } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -94,7 +85,7 @@ class App extends Component {
             Vehicles
           </button>
         </nav>
-        <CategoryContainer currentCategory={currentCategory} />
+        <CategoryContainer currentData={currentData} />
         <ScrollText />
       </div>
     );

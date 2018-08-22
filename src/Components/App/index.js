@@ -26,29 +26,37 @@ class App extends Component {
       fetchData(url)
         .then(res => res.json())
         .then(data => {
-          if (currentCategory === 'people') {
-            peopleList(data).then(currentData =>
-              this.setState({
-                currentData,
-                currentCategory
-              })
-            );
-          }
-          if (currentCategory === 'planets') {
-            planetList(data).then(currentData =>
-              this.setState({
-                currentData,
-                currentCategory
-              })
-            );
-          }
-          if (currentCategory === 'vehicles') {
-            this.setState({
-              currentData: vehicleList(data),
-              currentCategory
-            });
-          }
+          this.setCurrentData(currentCategory, data);
         });
+    }
+  };
+
+  setCurrentData = (currentCategory, data) => {
+    switch (currentCategory) {
+      case 'people':
+        peopleList(data).then(currentData =>
+          this.setState({
+            currentData,
+            currentCategory
+          })
+        );
+        break;
+      case 'planets':
+        planetList(data).then(currentData =>
+          this.setState({
+            currentData,
+            currentCategory
+          })
+        );
+        break;
+      case 'vehicles':
+        this.setState({
+          currentData: vehicleList(data),
+          currentCategory
+        });
+        break;
+      default:
+        break;
     }
   };
 

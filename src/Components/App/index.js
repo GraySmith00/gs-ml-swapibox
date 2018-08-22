@@ -5,7 +5,7 @@ import './App.css';
 import ScrollText from '../ScrollText';
 import CategoryContainer from '../CategoryContainer';
 
-import { fetchData, peopleList, planetList, vehicleList } from '../../helpers';
+import { initialFetchCall } from '../../helpers';
 
 class App extends Component {
   constructor() {
@@ -20,34 +20,12 @@ class App extends Component {
     this.setCurrentCategory('people');
   }
 
-  setCurrentCategory = currentCategory => {
+  setCurrentCategory = async currentCategory => {
     if (currentCategory) {
-      const url = `https://swapi.co/api/${currentCategory}/`;
-      fetchData(url)
-        .then(res => res.json())
-        .then(data => {
-          this.setCurrentData(currentCategory, data);
-        });
-    }
-  };
-
-  setCurrentData = (currentCategory, data) => {
-    switch (currentCategory) {
-      case 'people':
-        peopleList(data).then(currentData =>
-          this.setState({ currentData, currentCategory })
-        );
-        break;
-      case 'planets':
-        planetList(data).then(currentData =>
-          this.setState({ currentData, currentCategory })
-        );
-        break;
-      case 'vehicles':
-        this.setState({ currentData: vehicleList(data), currentCategory });
-        break;
-      default:
-        break;
+      this.setState({
+        currentData: await initialFetchCall(currentCategory),
+        currentCategory
+      });
     }
   };
 

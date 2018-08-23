@@ -18,7 +18,7 @@ const randomFilmData = filmData => {
       quote: film.opening_crawl
     };
   });
-  const index = Math.floor(Math.random() * openingCrawls.length) + 1;
+  const index = Math.floor(Math.random() * openingCrawls.length);
   return openingCrawls[index];
 };
 

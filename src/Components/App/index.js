@@ -13,7 +13,8 @@ class App extends Component {
     this.state = {
       currentData: [],
       currentCategory: '',
-      loading: true
+      loading: true,
+      favorites: []
     };
   }
 
@@ -33,6 +34,26 @@ class App extends Component {
 
   handleNavClick = event => {
     this.setCurrentCategory(event.target.value);
+  };
+
+  toggleFavorite = item => {
+    const alreadyFavorite = this.state.favorites.find(
+      favorite => favorite.name === item.name
+    );
+
+    if (alreadyFavorite) {
+      const newFavorites = this.state.favorites.filter(
+        favorite => favorite.name !== item.name
+      );
+      this.setState({
+        favorites: newFavorites
+      });
+    } else {
+      const newFavorites = [...this.state.favorites, item];
+      this.setState({
+        favorites: newFavorites
+      });
+    }
   };
 
   render() {
@@ -65,7 +86,12 @@ class App extends Component {
             Vehicles
           </button>
         </nav>
-        {!loading ? <CategoryContainer currentData={currentData} /> : null}
+        {!loading ? (
+          <CategoryContainer
+            currentData={currentData}
+            toggleFavorite={this.toggleFavorite}
+          />
+        ) : null}
         <ScrollText />
       </div>
     );

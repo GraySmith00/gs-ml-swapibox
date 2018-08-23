@@ -7,16 +7,10 @@ const CategoryCard = ({ item, toggleFavorite }) => {
       case 'name':
         return <h3 key={`${itemKey}-${index}`}>{item[itemKey]}</h3>;
       case 'favorite':
-        return item.favorite ? (
+        return (
           <i
             onClick={() => toggleFavorite(item)}
-            className="fas fa-star star"
-            key={`${itemKey}-${index}`}
-          />
-        ) : (
-          <i
-            onClick={() => toggleFavorite(item)}
-            className="far fa-star star"
+            className={`star ${item.favorite ? 'fas fa-start' : 'far fa-star'}`}
             key={`${itemKey}-${index}`}
           />
         );

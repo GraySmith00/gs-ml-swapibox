@@ -8,12 +8,7 @@ const CategoryContainer = ({ currentData }) => {
     <CategoryCard key={`${item}-${index}`} item={item} />
   ));
 
-  return (
-    <div className="category-container">
-      <h1>CategoryContainer</h1>
-      {cards}
-    </div>
-  );
+  return <div className="category-container">{cards}</div>;
 };
 
 CategoryContainer.propTypes = {

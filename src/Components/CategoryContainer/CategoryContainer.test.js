@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import CategoryContainer from '../CategoryContainer';
+import CategoryCard from '../CategoryCard';
 
 describe('CategoryContainer component', () => {
   let wrapper;
@@ -36,5 +37,9 @@ describe('CategoryContainer component', () => {
 
   it('should match the snapshot', () => {
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should render two cards if the currentData length is 2', () => {
+    expect(wrapper.find(CategoryCard).length).toEqual(2);
   });
 });

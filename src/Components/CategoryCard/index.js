@@ -1,16 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CategoryCard = ({ item }) => {
+const CategoryCard = ({ item, toggleFavorite }) => {
   const cards = Object.keys(item).map((itemKey, index) => {
     switch (itemKey) {
       case 'name':
         return <h3 key={`${itemKey}-${index}`}>{item[itemKey]}</h3>;
       case 'favorite':
         return item.favorite ? (
-          <i className="fas fa-star dark-star" key={`${itemKey}-${index}`} />
+          <i
+            onClick={() => toggleFavorite(item)}
+            className="fas fa-star dark-star"
+            key={`${itemKey}-${index}`}
+          />
         ) : (
-          <i className="far fa-star light-star" key={`${itemKey}-${index}`} />
+          <i
+            onClick={() => toggleFavorite(item)}
+            className="far fa-star light-star"
+            key={`${itemKey}-${index}`}
+          />
         );
       default:
         return (
@@ -22,7 +30,8 @@ const CategoryCard = ({ item }) => {
 };
 
 CategoryCard.propTypes = {
-  item: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired,
+  toggleFavorite: PropTypes.func.isRequired
 };
 
 export default CategoryCard;

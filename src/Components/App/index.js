@@ -3,9 +3,6 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 
 import ScrollText from '../ScrollText';
 import Landing from '../Landing';
-import People from '../People';
-import Planets from '../Planets';
-import Vehicles from '../Vehicles';
 import CategoryContainer from '../CategoryContainer';
 
 import { initialFetchCall } from '../../helpers';

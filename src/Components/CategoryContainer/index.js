@@ -5,7 +5,7 @@ import CategoryCard from '../CategoryCard';
 
 const CategoryContainer = ({ currentData }) => {
   let cards = currentData.map((item, index) => (
-    <CategoryCard key={`${item}-${index}`} {...item} />
+    <CategoryCard key={`${item}-${index}`} item={item} />
   ));
 
   return (

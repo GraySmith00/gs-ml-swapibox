@@ -1,15 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CategoryCard = props => {
-  return (
-    <div>
-      <h1>{props.name}</h1>
-      {Object.keys(props).map(propKey => {
-        <p>{`${propKey}: ${props[propKey]}`}</p>;
-      })}
-    </div>
-  );
+const CategoryCard = ({ item }) => {
+  const cards = Object.keys(item).map((itemKey, index) => {
+    switch (itemKey) {
+      case 'name':
+        return <h3 key={`${itemKey}-${index}`}>{item[itemKey]}</h3>;
+      case 'favorite':
+        return item.favorite ? (
+          <i className="fas fa-star dark-star" key={`${itemKey}-${index}`} />
+        ) : (
+          <i className="far fa-star light-star" key={`${itemKey}-${index}`} />
+        );
+      default:
+        return (
+          <p key={`${itemKey}-${index}`}>{`${itemKey}: ${item[itemKey]}`}</p>
+        );
+    }
+  });
+  return <div>{cards}</div>;
+};
+
+CategoryCard.propTypes = {
+  item: PropTypes.object.isRequired
 };
 
 export default CategoryCard;

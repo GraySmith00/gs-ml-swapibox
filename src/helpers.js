@@ -51,8 +51,8 @@ export const peopleList = data => {
       }, {});
       return {
         name: person.name,
-        ...promiseData,
-        favorite: false
+        favorite: false,
+        ...promiseData
       };
     } catch (error) {
       console.log(error.message);
@@ -99,11 +99,11 @@ export const planetList = data => {
       const residents = await Promise.all(residentsPromises);
       return {
         name,
+        favorite: false,
         terrain,
         climate,
         population,
-        residents,
-        favorite: false
+        residents
       };
     } catch (error) {
       console.log(error.message);
@@ -115,6 +115,6 @@ export const planetList = data => {
 export const vehicleList = data => {
   return data.results.map(vehicle => {
     const { name, model, vehicle_class, passengers } = vehicle;
-    return { name, model, vehicle_class, passengers, favorite: false };
+    return { name, favorite: false, model, vehicle_class, passengers };
   });
 };

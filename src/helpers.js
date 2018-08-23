@@ -1,14 +1,3 @@
-// export const filmsFetchCall = () => {
-//   const url = 'https://swapi.co/api/films/';
-//   fetch(url)
-//     .then(res => res.json())
-//     .then(data => {
-//       const { title, date, quote } = randomFilmData(data);
-//       this.setState({ title, date, quote });
-//     })
-//     .catch(error => console.log(error));
-// };
-
 export const filmFetchCall = async () => {
   const url = 'https://swapi.co/api/films/';
   try {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ScrollText.css';
-import { randomFilmData } from '../../helpers';
+import { filmFetchCall } from '../../helpers';
 
 class ScrollText extends Component {
   constructor() {
@@ -13,15 +13,13 @@ class ScrollText extends Component {
   }
 
   componentDidMount() {
-    const url = 'https://swapi.co/api/films/';
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        const { title, date, quote } = randomFilmData(data);
-        this.setState({ title, date, quote });
-      })
-      .catch(error => console.log(error));
+    this.setScrollState();
   }
+
+  setScrollState = async () => {
+    const { title, date, quote } = await filmFetchCall();
+    this.setState({ title, date, quote });
+  };
 
   render() {
     const { title, date, quote } = this.state;

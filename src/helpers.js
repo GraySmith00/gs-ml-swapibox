@@ -1,4 +1,16 @@
-export const randomFilmData = filmData => {
+export const filmFetchCall = async () => {
+  const url = 'https://swapi.co/api/films/';
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const { title, date, quote } = randomFilmData(data);
+    return { title, date, quote };
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+const randomFilmData = filmData => {
   const openingCrawls = filmData.results.map(film => {
     return {
       title: film.title,

@@ -12,7 +12,8 @@ class App extends Component {
     super();
     this.state = {
       currentData: [],
-      currentCategory: ''
+      currentCategory: '',
+      loading: true
     };
   }
 
@@ -24,7 +25,8 @@ class App extends Component {
     if (currentCategory) {
       this.setState({
         currentData: await initialFetchCall(currentCategory),
-        currentCategory
+        currentCategory,
+        loading: false
       });
     }
   };
@@ -34,7 +36,7 @@ class App extends Component {
   };
 
   render() {
-    const { currentData } = this.state;
+    const { currentData, loading } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -63,7 +65,7 @@ class App extends Component {
             Vehicles
           </button>
         </nav>
-        <CategoryContainer currentData={currentData} />
+        {!loading ? <CategoryContainer currentData={currentData} /> : null}
         <ScrollText />
       </div>
     );

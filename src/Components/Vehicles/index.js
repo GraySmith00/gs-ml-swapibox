@@ -12,7 +12,7 @@ class Vehicles extends Component {
   }
 
   async componentDidMount() {
-    const vehicleData = await initialFetchCall('vehicle');
+    const vehicleData = await initialFetchCall('vehicles');
     this.setState({ vehicleData });
   }
 

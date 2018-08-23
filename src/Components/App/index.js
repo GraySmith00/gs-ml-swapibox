@@ -18,10 +18,6 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setCurrentCategory('people');
-  }
-
   setCurrentCategory = async currentCategory => {
     if (currentCategory) {
       this.setState({

@@ -8,9 +8,9 @@ const CategoryCard = ({ item }) => {
         return <h3 key={`${itemKey}-${index}`}>{item[itemKey]}</h3>;
       case 'favorite':
         return item.favorite ? (
-          <i className="fas fa-star" key={`${itemKey}-${index}`} />
+          <i className="fas fa-star dark-star" key={`${itemKey}-${index}`} />
         ) : (
-          <i className="far fa-star" key={`${itemKey}-${index}`} />
+          <i className="far fa-star light-star" key={`${itemKey}-${index}`} />
         );
       default:
         return (

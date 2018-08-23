@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryContainer component should match the snapshot 1`] = `"<div class=\\"category-container\\"><div><i class=\\"far fa-star light-star\\"></i><h3>Luke Skywalker</h3><p>planet: Tatooine</p><p>population: 200000</p><p>species: Human</p></div><div><i class=\\"far fa-star light-star\\"></i><h3>C-3PO</h3><p>planet: Tatooine</p><p>population: 200000</p><p>species: Droid</p></div></div>"`;

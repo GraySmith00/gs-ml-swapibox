@@ -6,8 +6,9 @@ import Landing from '../Landing';
 import People from '../People';
 import Planets from '../Planets';
 import Vehicles from '../Vehicles';
+import CategoryContainer from '../CategoryContainer';
 
-// import { initialFetchCall } from '../../helpers';
+import { initialFetchCall } from '../../helpers';
 
 import './App.css';
 
@@ -15,9 +16,23 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      favorites: []
+      favorites: [],
+      peopleData: [],
+      planetsData: [],
+      vehiclesData: []
     };
   }
+
+  setCategoryState = async category => {
+    if (this.state[`${category}Data`].length === 0) {
+      try {
+        const data = await initialFetchCall(category);
+        this.setState({ [`${category}Data`]: data });
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
 
   toggleFavorite = item => {
     const alreadyFavorite = this.state.favorites.find(
@@ -39,6 +54,7 @@ class App extends Component {
   };
 
   render() {
+    const { peopleData, planetsData, vehiclesData } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -60,10 +76,42 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route
               path="/people"
-              render={() => <People toggleFavorite={this.toggleFavorite} />}
+              render={() => {
+                this.setCategoryState('people');
+                return (
+                  <CategoryContainer
+                    toggleFavorite={this.toggleFavorite}
+                    currentData={peopleData}
+                  />
+                );
+              }}
             />
-            <Route exact path="/planets" component={Planets} />
-            <Route exact path="/vehicles" component={Vehicles} />
+            <Route
+              exact
+              path="/planets"
+              render={() => {
+                this.setCategoryState('planets');
+                return (
+                  <CategoryContainer
+                    toggleFavorite={this.toggleFavorite}
+                    currentData={planetsData}
+                  />
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/vehicles"
+              render={() => {
+                this.setCategoryState('vehicles');
+                return (
+                  <CategoryContainer
+                    toggleFavorite={this.toggleFavorite}
+                    currentData={vehiclesData}
+                  />
+                );
+              }}
+            />
           </Switch>
         </main>
         <footer>

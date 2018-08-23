@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Route, NavLink, Switch } from 'react-router-dom';
 import './App.css';
 
 import ScrollText from '../ScrollText';
@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   setCurrentCategory = async currentCategory => {
+    currentCategory = currentCategory.slice(1);
     if (currentCategory) {
       this.setState({
         currentData: await initialFetchCall(currentCategory),
@@ -28,15 +29,14 @@ class App extends Component {
     }
   };
 
-  handleNavClick = event => {
-    this.setCurrentCategory(event.target.value);
-  };
+  // handleNavClick = event => {
+  //   this.setCurrentCategory(event.target.value);
+  // };
 
   toggleFavorite = item => {
     const alreadyFavorite = this.state.favorites.find(
       favorite => favorite.name === item.name
     );
-
     if (alreadyFavorite) {
       const newFavorites = this.state.favorites.filter(
         favorite => favorite.name !== item.name
@@ -60,34 +60,63 @@ class App extends Component {
           <h1 className="App-title">SWAPIbox</h1>
         </header>
         <nav className="nav-btns">
-          <button
-            onClick={this.handleNavClick}
-            className="people-btn"
-            value="people"
-          >
+          <NavLink exact to="/people" className="nav-link">
             People
-          </button>
-          <button
-            onClick={this.handleNavClick}
-            className="planets-btn"
-            value="planets"
-          >
+          </NavLink>
+          <NavLink exact to="/planets" className="nav-link">
             Planets
-          </button>
-          <button
-            onClick={this.handleNavClick}
-            className="vehicles-btn"
-            value="vehicles"
-          >
+          </NavLink>
+          <NavLink exact to="/vehicles" className="nav-link">
             Vehicles
-          </button>
+          </NavLink>
         </nav>
-        {!loading ? (
+        <Switch>
+          <Route
+            exact
+            path="/people"
+            render={({ match }) => {
+              this.setCurrentCategory(match.path);
+              return (
+                <CategoryContainer
+                  currentData={currentData}
+                  toggleFavorite={this.toggleFavorite}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/planets"
+            render={({ match }) => {
+              this.setCurrentCategory(match.path);
+              return (
+                <CategoryContainer
+                  currentData={currentData}
+                  toggleFavorite={this.toggleFavorite}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/vehicles"
+            render={({ match }) => {
+              this.setCurrentCategory(match.path);
+              return (
+                <CategoryContainer
+                  currentData={currentData}
+                  toggleFavorite={this.toggleFavorite}
+                />
+              );
+            }}
+          />
+        </Switch>
+        {/* {!loading ? (
           <CategoryContainer
             currentData={currentData}
             toggleFavorite={this.toggleFavorite}
           />
-        ) : null}
+        ) : null} */}
         <ScrollText />
       </div>
     );

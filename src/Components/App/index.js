@@ -1,37 +1,23 @@
 import React, { Component } from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
-import './App.css';
 
 import ScrollText from '../ScrollText';
-import CategoryContainer from '../CategoryContainer';
+import Landing from '../Landing';
+import People from '../People';
+import Planets from '../Planets';
+import Vehicles from '../Vehicles';
 
-import { initialFetchCall } from '../../helpers';
+// import { initialFetchCall } from '../../helpers';
+
+import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentData: [],
-      currentCategory: '',
-      loading: true,
       favorites: []
     };
   }
-
-  setCurrentCategory = async currentCategory => {
-    currentCategory = currentCategory.slice(1);
-    if (currentCategory) {
-      this.setState({
-        currentData: await initialFetchCall(currentCategory),
-        currentCategory,
-        loading: false
-      });
-    }
-  };
-
-  // handleNavClick = event => {
-  //   this.setCurrentCategory(event.target.value);
-  // };
 
   toggleFavorite = item => {
     const alreadyFavorite = this.state.favorites.find(
@@ -53,71 +39,36 @@ class App extends Component {
   };
 
   render() {
-    const { currentData, loading } = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">SWAPIbox</h1>
+          <nav className="nav-btns">
+            <NavLink exact to="/people" className="nav-link">
+              People
+            </NavLink>
+            <NavLink exact to="/planets" className="nav-link">
+              Planets
+            </NavLink>
+            <NavLink exact to="/vehicles" className="nav-link">
+              Vehicles
+            </NavLink>
+          </nav>
         </header>
-        <nav className="nav-btns">
-          <NavLink exact to="/people" className="nav-link">
-            People
-          </NavLink>
-          <NavLink exact to="/planets" className="nav-link">
-            Planets
-          </NavLink>
-          <NavLink exact to="/vehicles" className="nav-link">
-            Vehicles
-          </NavLink>
-        </nav>
-        <Switch>
-          <Route
-            exact
-            path="/people"
-            render={({ match }) => {
-              this.setCurrentCategory(match.path);
-              return (
-                <CategoryContainer
-                  currentData={currentData}
-                  toggleFavorite={this.toggleFavorite}
-                />
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/planets"
-            render={({ match }) => {
-              this.setCurrentCategory(match.path);
-              return (
-                <CategoryContainer
-                  currentData={currentData}
-                  toggleFavorite={this.toggleFavorite}
-                />
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/vehicles"
-            render={({ match }) => {
-              this.setCurrentCategory(match.path);
-              return (
-                <CategoryContainer
-                  currentData={currentData}
-                  toggleFavorite={this.toggleFavorite}
-                />
-              );
-            }}
-          />
-        </Switch>
-        {/* {!loading ? (
-          <CategoryContainer
-            currentData={currentData}
-            toggleFavorite={this.toggleFavorite}
-          />
-        ) : null} */}
-        <ScrollText />
+        <main>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route
+              path="/people"
+              render={() => <People toggleFavorite={this.toggleFavorite} />}
+            />
+            <Route exact path="/planets" component={Planets} />
+            <Route exact path="/vehicles" component={Vehicles} />
+          </Switch>
+        </main>
+        <footer>
+          <ScrollText />
+        </footer>
       </div>
     );
   }

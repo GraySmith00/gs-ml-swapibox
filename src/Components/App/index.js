@@ -1,46 +1,40 @@
 import React, { Component } from 'react';
-
-import './App.css';
+import { Route, NavLink, Switch } from 'react-router-dom';
 
 import ScrollText from '../ScrollText';
+import Landing from '../Landing';
 import CategoryContainer from '../CategoryContainer';
 
 import { initialFetchCall } from '../../helpers';
+
+import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentData: [],
-      currentCategory: '',
-      loading: true,
-      favorites: []
+      favorites: [],
+      peopleData: [],
+      planetsData: [],
+      vehiclesData: []
     };
   }
 
-  componentDidMount() {
-    this.setCurrentCategory('people');
-  }
-
-  setCurrentCategory = async currentCategory => {
-    if (currentCategory) {
-      this.setState({
-        currentData: await initialFetchCall(currentCategory),
-        currentCategory,
-        loading: false
-      });
+  setCategoryState = async category => {
+    if (this.state[`${category}Data`].length === 0) {
+      try {
+        const data = await initialFetchCall(category);
+        this.setState({ [`${category}Data`]: data });
+      } catch (error) {
+        console.log(error.message);
+      }
     }
-  };
-
-  handleNavClick = event => {
-    this.setCurrentCategory(event.target.value);
   };
 
   toggleFavorite = item => {
     const alreadyFavorite = this.state.favorites.find(
       favorite => favorite.name === item.name
     );
-
     if (alreadyFavorite) {
       const newFavorites = this.state.favorites.filter(
         favorite => favorite.name !== item.name
@@ -57,42 +51,69 @@ class App extends Component {
   };
 
   render() {
-    const { currentData, loading } = this.state;
+    const { peopleData, planetsData, vehiclesData } = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">SWAPIbox</h1>
+          <nav className="nav-btns">
+            <NavLink exact to="/people" className="nav-link">
+              People
+            </NavLink>
+            <NavLink exact to="/planets" className="nav-link">
+              Planets
+            </NavLink>
+            <NavLink exact to="/vehicles" className="nav-link">
+              Vehicles
+            </NavLink>
+          </nav>
         </header>
-        <nav className="nav-btns">
-          <button
-            onClick={this.handleNavClick}
-            className="people-btn"
-            value="people"
-          >
-            People
-          </button>
-          <button
-            onClick={this.handleNavClick}
-            className="planets-btn"
-            value="planets"
-          >
-            Planets
-          </button>
-          <button
-            onClick={this.handleNavClick}
-            className="vehicles-btn"
-            value="vehicles"
-          >
-            Vehicles
-          </button>
-        </nav>
-        {!loading ? (
-          <CategoryContainer
-            currentData={currentData}
-            toggleFavorite={this.toggleFavorite}
-          />
-        ) : null}
-        <ScrollText />
+        <main>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route
+              path="/people"
+              render={() => {
+                this.setCategoryState('people');
+                return (
+                  <CategoryContainer
+                    toggleFavorite={this.toggleFavorite}
+                    currentData={peopleData}
+                  />
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/planets"
+              render={() => {
+                this.setCategoryState('planets');
+                return (
+                  <CategoryContainer
+                    toggleFavorite={this.toggleFavorite}
+                    currentData={planetsData}
+                  />
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/vehicles"
+              render={() => {
+                this.setCategoryState('vehicles');
+                return (
+                  <CategoryContainer
+                    toggleFavorite={this.toggleFavorite}
+                    currentData={vehiclesData}
+                  />
+                );
+              }}
+            />
+          </Switch>
+        </main>
+        <footer>
+          <ScrollText />
+        </footer>
       </div>
     );
   }

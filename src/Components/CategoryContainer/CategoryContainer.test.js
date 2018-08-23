@@ -6,8 +6,10 @@ import CategoryContainer from '../CategoryContainer';
 describe('CategoryContainer component', () => {
   let wrapper;
   let mockCurrentData;
+  let mockToggleFavorite;
 
   beforeEach(() => {
+    mockToggleFavorite = jest.fn();
     mockCurrentData = [
       {
         favorite: false,
@@ -24,7 +26,12 @@ describe('CategoryContainer component', () => {
         species: 'Droid'
       }
     ];
-    wrapper = shallow(<CategoryContainer currentData={mockCurrentData} />);
+    wrapper = shallow(
+      <CategoryContainer
+        currentData={mockCurrentData}
+        toggleFavorite={mockToggleFavorite}
+      />
+    );
   });
 
   it('should match the snapshot', () => {

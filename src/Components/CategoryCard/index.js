@@ -10,13 +10,13 @@ const CategoryCard = ({ item, toggleFavorite }) => {
         return item.favorite ? (
           <i
             onClick={() => toggleFavorite(item)}
-            className="fas fa-star dark-star"
+            className="fas fa-star star"
             key={`${itemKey}-${index}`}
           />
         ) : (
           <i
             onClick={() => toggleFavorite(item)}
-            className="far fa-star light-star"
+            className="far fa-star star"
             key={`${itemKey}-${index}`}
           />
         );

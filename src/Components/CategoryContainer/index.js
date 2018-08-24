@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import CategoryCard from '../CategoryCard';
 
 const CategoryContainer = ({ currentData, toggleFavorite }) => {
-  console.log(currentData);
   let cards = currentData.map((item, index) => (
     <CategoryCard
       key={`${item}-${index}`}

@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CategoryCard component should match the snapshot 1`] = `"<div><h3>Luke Skywalker</h3><p>planet: Tatooine</p><p>population: 200000</p><p>species: Human</p><i class=\\"far fa-star light-star\\"></i></div>"`;
+exports[`CategoryCard component should match the snapshot 1`] = `"<div><h3>Luke Skywalker</h3><p>planet: Tatooine</p><p>population: 200000</p><p>species: Human</p><i class=\\"star far fa-star\\"></i></div>"`;

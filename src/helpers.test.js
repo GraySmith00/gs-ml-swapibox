@@ -1,5 +1,5 @@
 import React from 'react';
-import { filmFetchCall, randomFilmData } from './helpers';
+import { filmFetchCall, randomFilmData, initialFetchCall } from './helpers';
 import { mockPeopleFetch, mockPlanetFetch, mockVehicleFetch } from './MockData';
 
 describe('helpers file', () => {
@@ -63,6 +63,38 @@ describe('helpers file', () => {
       };
       const result = randomFilmData(mockFilmResponse);
       expect(result.title).toEqual('The Empire Strikes Back');
+    });
+  });
+
+  describe('initialFetchCall', () => {
+    it('should make a fetch call with the correct params', () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockPeopleFetch)
+        })
+      );
+      initialFetchCall('people');
+      expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/');
+    });
+
+    it('should throw an error if the fetch fails', async () => {
+      const expected = new Error('failed to fetch');
+
+      window.fetch = jest
+        .fn()
+        .mockImplementation(() => Promise.reject(new Error('failed to fetch')));
+
+      await expect(initialFetchCall('people')).rejects.toEqual(expected);
+    });
+
+    it('should return an array of people objects when the current category is people', async () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockPeopleFetch)
+        })
+      );
+      const result = await initialFetchCall('people');
+      expect(result.length).toEqual(10);
     });
   });
 });

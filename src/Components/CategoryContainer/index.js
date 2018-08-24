@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CategoryCard from '../CategoryCard';
+import './CategoryContainer.css';
 
 const CategoryContainer = ({ currentData, toggleFavorite }) => {
   let cards = currentData.map((item, index) => (

@@ -6,7 +6,7 @@ export const filmFetchCall = async () => {
     const { title, date, quote } = randomFilmData(data);
     return { title, date, quote };
   } catch (error) {
-    console.log(error.message);
+    throw new Error(error.message);
   }
 };
 

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollText Component should match the snapshot 1`] = `"<section class=\\"scrolltext-container\\"><div class=\\"crawl\\"><p></p><div class=\\"film-info\\"><p></p><h1></h1></div></div></section>"`;

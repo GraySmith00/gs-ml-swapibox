@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import App from '../App';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('App component', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<App />);
+    wrapper = mount(<App />);
   });
-  it.skip('renders without crashing', () => {
+
+  it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it.skip('matches the snapshot', () => {
+  it('should match the snapshot', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

@@ -17,8 +17,12 @@ class ScrollText extends Component {
   }
 
   setScrollState = async () => {
-    const { title, date, quote } = await filmFetchCall();
-    this.setState({ title, date, quote });
+    try {
+      const { title, date, quote } = await filmFetchCall();
+      this.setState({ title, date, quote });
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   render() {

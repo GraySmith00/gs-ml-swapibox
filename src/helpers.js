@@ -10,7 +10,7 @@ export const filmFetchCall = async () => {
   }
 };
 
-const randomFilmData = filmData => {
+export const randomFilmData = filmData => {
   const openingCrawls = filmData.results.map(film => {
     return {
       title: film.title,

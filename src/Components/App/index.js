@@ -21,7 +21,8 @@ class App extends Component {
       favorites: [],
       peopleData: [],
       planetsData: [],
-      vehiclesData: []
+      vehiclesData: [],
+      errors: null
     };
   }
 
@@ -31,7 +32,7 @@ class App extends Component {
         const data = await initialFetchCall(category);
         this.setState({ [`${category}Data`]: data });
       } catch (error) {
-        console.log(error.message);
+        this.setState({ errors: 'failed' });
       }
     }
   };

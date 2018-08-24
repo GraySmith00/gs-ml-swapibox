@@ -38,13 +38,13 @@ describe('App component', () => {
     expect(wrapper.state().peopleData.length).toEqual(10);
   });
 
-  // it('should set the errors state with the error message if something went wrong', async () => {
-  //   window.fetch = jest
-  //     .fn()
-  //     .mockImplementation(() => Promise.reject(new Error('failed')));
-  //   await wrapper.instance().setCategoryState('people');
-  //   expect(wrapper.state().errors).toEqual('failed');
-  // });
+  it('should set the errors state with the error message if something went wrong', async () => {
+    window.fetch = jest
+      .fn()
+      .mockImplementation(() => Promise.reject(new Error('failed')));
+    await wrapper.instance().setCategoryState('people');
+    expect(wrapper.state('errors')).toEqual('failed');
+  });
 
   it('should add categoryCard to favorites array', () => {
     wrapper.instance().toggleFavorite(mockFavoriteOne);

@@ -22,7 +22,7 @@ class App extends Component {
       peopleData: [],
       planetsData: [],
       vehiclesData: [],
-      errors: null
+      errors: ''
     };
   }
 
@@ -32,7 +32,7 @@ class App extends Component {
         const data = await initialFetchCall(category);
         this.setState({ [`${category}Data`]: data });
       } catch (error) {
-        this.setState({ errors: 'failed' });
+        this.setState({ errors: error.message });
       }
     }
   };

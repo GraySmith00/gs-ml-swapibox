@@ -23,14 +23,10 @@ const randomFilmData = filmData => {
 };
 
 export const initialFetchCall = async currentCategory => {
-  try {
-    const url = `https://swapi.co/api/${currentCategory}/`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return setCurrentData(currentCategory, data);
-  } catch (error) {
-    console.log(error.message);
-  }
+  const url = `https://swapi.co/api/${currentCategory}/`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return setCurrentData(currentCategory, data);
 };
 
 const setCurrentData = async (currentCategory, data) => {
@@ -55,71 +51,51 @@ export const peopleList = data => {
   const unresolvedPromises = data.results.map(async person => {
     const homeWorldPromise = getHomeworldData(person);
     const speciesPromise = getSpeciesData(person);
-
-    try {
-      const response = await Promise.all([homeWorldPromise, speciesPromise]);
-      const promiseData = response.reduce((promiseData, promise) => {
-        return { ...promiseData, ...promise };
-      }, {});
-      return {
-        name: person.name,
-        favorite: false,
-        ...promiseData
-      };
-    } catch (error) {
-      console.log(error.message);
-    }
+    const response = await Promise.all([homeWorldPromise, speciesPromise]);
+    const promiseData = response.reduce((promiseData, promise) => {
+      return { ...promiseData, ...promise };
+    }, {});
+    return {
+      name: person.name,
+      favorite: false,
+      ...promiseData
+    };
   });
 
   return Promise.all(unresolvedPromises);
 };
 
 const getHomeworldData = async person => {
-  try {
-    const response = await fetch(person.homeworld);
-    const data = await response.json();
-    const { name: planet, population } = data;
-    return { planet, population };
-  } catch (error) {
-    console.log(error.message);
-  }
+  const response = await fetch(person.homeworld);
+  const data = await response.json();
+  const { name: planet, population } = data;
+  return { planet, population };
 };
 
 const getSpeciesData = async person => {
-  try {
-    const response = await fetch(person.species[0]);
-    const data = await response.json();
-    return { species: data.name };
-  } catch (error) {
-    console.log(error.message);
-  }
+  const response = await fetch(person.species[0]);
+  const data = await response.json();
+  return { species: data.name };
 };
 
 export const planetList = data => {
   const unresolvedPromises = data.results.map(async planet => {
     const { name, terrain, population, climate } = planet;
     const residentsPromises = planet.residents.map(async resident => {
-      try {
-        const response = await fetch(resident);
-        const data = await response.json();
-        return data.name;
-      } catch (error) {
-        console.log(error.message);
-      }
+      const response = await fetch(resident);
+      const data = await response.json();
+      return data.name;
     });
-    try {
-      const residents = await Promise.all(residentsPromises);
-      return {
-        name,
-        favorite: false,
-        terrain,
-        climate,
-        population,
-        residents
-      };
-    } catch (error) {
-      console.log(error.message);
-    }
+
+    const residents = await Promise.all(residentsPromises);
+    return {
+      name,
+      favorite: false,
+      terrain,
+      climate,
+      population,
+      residents
+    };
   });
   return Promise.all(unresolvedPromises);
 };

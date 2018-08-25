@@ -41,8 +41,6 @@ export const setCurrentData = async (currentCategory, data) => {
     case 'vehicles':
       currentData = vehicleList(data);
       break;
-    default:
-      break;
   }
   return currentData;
 };

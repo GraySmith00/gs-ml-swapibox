@@ -5,7 +5,8 @@ import {
   initialFetchCall,
   setCurrentData,
   getHomeworldData,
-  getSpeciesData
+  getSpeciesData,
+  vehicleList
 } from './helpers';
 import { mockPeopleFetch, mockPlanetFetch, mockVehicleFetch } from './MockData';
 
@@ -330,6 +331,13 @@ describe('helpers file', () => {
         .mockImplementation(() => Promise.reject(new Error('failed to fetch')));
 
       await expect(getSpeciesData(lukeSkywalker)).rejects.toEqual(expected);
+    });
+  });
+
+  describe('vehicleList', () => {
+    it('should return a vehicle object with a name, model, vehicle class, and passengers', () => {
+      const result = vehicleList(mockVehicleFetch);
+      expect(result.length).toEqual(10);
     });
   });
 });

@@ -6,7 +6,9 @@ import {
   setCurrentData,
   getHomeworldData,
   getSpeciesData,
-  vehicleList
+  vehicleList,
+  peopleList,
+  planetList
 } from './helpers';
 import { mockPeopleFetch, mockPlanetFetch, mockVehicleFetch } from './MockData';
 
@@ -107,7 +109,7 @@ describe('helpers file', () => {
   });
 
   describe('setCurrentData', () => {
-    it('should make a fetch call with the correct params', () => {
+    it('should make a people fetch call with the correct params when the currentCategory is people', () => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
           json: () => Promise.resolve(mockPeopleFetch)
@@ -122,27 +124,55 @@ describe('helpers file', () => {
       );
     });
 
+    it('should make a planets fetch call with the correct params when the currentCategory is planets', () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockPlanetFetch)
+        })
+      );
+      setCurrentData('planets', mockPlanetFetch);
+      expect(window.fetch).toHaveBeenCalledWith(
+        'https://swapi.co/api/people/63/'
+      );
+    });
+
+    it('should return an array of people objects when the current category is people', async () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockPeopleFetch)
+        })
+      );
+      const result = await setCurrentData('people', mockPeopleFetch);
+      expect(result.length).toEqual(10);
+    });
+
     it('should return an array of planets objects when the current category is planets', async () => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
           json: () => Promise.resolve(mockPlanetFetch)
         })
       );
-      const result = await initialFetchCall('planets');
+      const result = await setCurrentData('planets', mockPlanetFetch);
+      expect(result.length).toEqual(10);
+    });
+
+    it('should return an array of vehicles objects when the current category is vehicles', async () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockVehicleFetch)
+        })
+      );
+      const result = await initialFetchCall('vehicles');
       expect(result.length).toEqual(10);
     });
   });
 
-  // describe('peopleList', () => {
-  //   window.fetch = jest.fn().mockImplementation(() => (
-  //     Promise.resolve({
-  //       json: () => Promise.resolve()
-  //     })
-  //   ))
-  //   it('should return an array of the correct length', () => {
-
-  //   })
-  // });
+  describe('peopleList', () => {
+    it('should return an array of the correct length', async () => {
+      const result = await peopleList(mockPeopleFetch);
+      expect(result.length).toEqual(10);
+    });
+  });
 
   describe('getHomeWorldData', () => {
     let mockHomeworldData;
@@ -331,6 +361,69 @@ describe('helpers file', () => {
         .mockImplementation(() => Promise.reject(new Error('failed to fetch')));
 
       await expect(getSpeciesData(lukeSkywalker)).rejects.toEqual(expected);
+    });
+  });
+
+  describe('planetList', () => {
+    let mockResident;
+
+    beforeEach(() => {
+      mockResident = {
+        name: 'Leia Organa',
+        height: '150',
+        mass: '49',
+        hair_color: 'brown',
+        skin_color: 'light',
+        eye_color: 'brown',
+        birth_year: '19BBY',
+        gender: 'female',
+        homeworld: 'https://swapi.co/api/planets/2/',
+        films: [
+          'https://swapi.co/api/films/2/',
+          'https://swapi.co/api/films/6/',
+          'https://swapi.co/api/films/3/',
+          'https://swapi.co/api/films/1/',
+          'https://swapi.co/api/films/7/'
+        ],
+        species: ['https://swapi.co/api/species/1/'],
+        vehicles: ['https://swapi.co/api/vehicles/30/'],
+        starships: [],
+        created: '2014-12-10T15:20:09.791000Z',
+        edited: '2014-12-20T21:17:50.315000Z',
+        url: 'https://swapi.co/api/people/5/'
+      };
+    });
+
+    it('should call fetch with the correct params', () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockResident)
+        })
+      );
+
+      planetList(mockPlanetFetch);
+
+      expect(window.fetch).toHaveBeenCalledWith(
+        'https://swapi.co/api/people/5/'
+      );
+    });
+
+    it('should throw an error if something went wrong', async () => {
+      const expected = new Error('failed to fetch');
+      window.fetch = jest
+        .fn()
+        .mockImplementation(() => Promise.reject(new Error('failed to fetch')));
+      await expect(planetList(mockPlanetFetch)).rejects.toEqual(expected);
+    });
+
+    it('should return an array of the correct length', async () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockResident)
+        })
+      );
+      const result = await planetList(mockPlanetFetch);
+      expect(result.length).toEqual(10);
     });
   });
 

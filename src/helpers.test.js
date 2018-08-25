@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   filmFetchCall,
   randomFilmData,
@@ -11,6 +10,7 @@ import {
   planetList
 } from './helpers';
 import { mockPeopleFetch, mockPlanetFetch, mockVehicleFetch } from './MockData';
+import { isatty } from 'tty';
 
 describe('helpers file', () => {
   let mockFilmResponse;
@@ -164,6 +164,16 @@ describe('helpers file', () => {
       );
       const result = await initialFetchCall('vehicles');
       expect(result.length).toEqual(10);
+    });
+
+    it('should default if bad data is passed to it', async () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockVehicleFetch)
+        })
+      );
+      const result = await initialFetchCall('poop');
+      expect(result).toEqual(undefined);
     });
   });
 

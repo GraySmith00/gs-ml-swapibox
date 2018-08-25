@@ -8,7 +8,8 @@ class ScrollText extends Component {
     this.state = {
       title: '',
       date: '',
-      quote: ''
+      quote: '',
+      errors: ''
     };
   }
 
@@ -21,7 +22,7 @@ class ScrollText extends Component {
       const { title, date, quote } = await filmFetchCall();
       this.setState({ title, date, quote });
     } catch (error) {
-      console.log(error.message);
+      this.setState({ errors: error.message });
     }
   };
 

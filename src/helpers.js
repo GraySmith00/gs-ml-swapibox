@@ -6,11 +6,11 @@ export const filmFetchCall = async () => {
     const { title, date, quote } = randomFilmData(data);
     return { title, date, quote };
   } catch (error) {
-    console.log(error.message);
+    throw new Error(error.message);
   }
 };
 
-const randomFilmData = filmData => {
+export const randomFilmData = filmData => {
   const openingCrawls = filmData.results.map(film => {
     return {
       title: film.title,
@@ -29,7 +29,7 @@ export const initialFetchCall = async currentCategory => {
   return setCurrentData(currentCategory, data);
 };
 
-const setCurrentData = async (currentCategory, data) => {
+export const setCurrentData = async (currentCategory, data) => {
   let currentData;
   switch (currentCategory) {
     case 'people':
@@ -40,8 +40,6 @@ const setCurrentData = async (currentCategory, data) => {
       break;
     case 'vehicles':
       currentData = vehicleList(data);
-      break;
-    default:
       break;
   }
   return currentData;
@@ -61,20 +59,20 @@ export const peopleList = data => {
       ...promiseData
     };
   });
-
   return Promise.all(unresolvedPromises);
 };
 
-const getHomeworldData = async person => {
+export const getHomeworldData = async person => {
   const response = await fetch(person.homeworld);
   const data = await response.json();
   const { name: planet, population } = data;
   return { planet, population };
 };
 
-const getSpeciesData = async person => {
+export const getSpeciesData = async person => {
   const response = await fetch(person.species[0]);
   const data = await response.json();
+
   return { species: data.name };
 };
 

@@ -65,13 +65,28 @@ class App extends Component {
             <header className="App-header">
               <h1 className="App-title">SWAPIbox</h1>
               <nav className="nav-btns">
-                <NavLink exact to="/people" className="nav-link">
+                <NavLink
+                  exact
+                  to="/people"
+                  className="nav-link"
+                  onClick={() => this.setCategoryState('people')}
+                >
                   People
                 </NavLink>
-                <NavLink exact to="/planets" className="nav-link">
+                <NavLink
+                  exact
+                  to="/planets"
+                  className="nav-link"
+                  onClick={() => this.setCategoryState('planets')}
+                >
                   Planets
                 </NavLink>
-                <NavLink exact to="/vehicles" className="nav-link">
+                <NavLink
+                  exact
+                  to="/vehicles"
+                  className="nav-link"
+                  onClick={() => this.setCategoryState('vehicles')}
+                >
                   Vehicles
                 </NavLink>
               </nav>
@@ -81,41 +96,32 @@ class App extends Component {
                 <Route exact path="/" component={Landing} />
                 <Route
                   path="/people"
-                  render={() => {
-                    this.setCategoryState('people');
-                    return (
-                      <CategoryContainer
-                        toggleFavorite={this.toggleFavorite}
-                        currentData={peopleData}
-                      />
-                    );
-                  }}
+                  render={() => (
+                    <CategoryContainer
+                      toggleFavorite={this.toggleFavorite}
+                      currentData={peopleData}
+                    />
+                  )}
                 />
                 <Route
                   exact
                   path="/planets"
-                  render={() => {
-                    this.setCategoryState('planets');
-                    return (
-                      <CategoryContainer
-                        toggleFavorite={this.toggleFavorite}
-                        currentData={planetsData}
-                      />
-                    );
-                  }}
+                  render={() => (
+                    <CategoryContainer
+                      toggleFavorite={this.toggleFavorite}
+                      currentData={planetsData}
+                    />
+                  )}
                 />
                 <Route
                   exact
                   path="/vehicles"
-                  render={() => {
-                    this.setCategoryState('vehicles');
-                    return (
-                      <CategoryContainer
-                        toggleFavorite={this.toggleFavorite}
-                        currentData={vehiclesData}
-                      />
-                    );
-                  }}
+                  render={() => (
+                    <CategoryContainer
+                      toggleFavorite={this.toggleFavorite}
+                      currentData={vehiclesData}
+                    />
+                  )}
                 />
               </Switch>
             </main>

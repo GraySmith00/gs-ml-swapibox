@@ -29,7 +29,7 @@ export const initialFetchCall = async currentCategory => {
   return setCurrentData(currentCategory, data);
 };
 
-const setCurrentData = async (currentCategory, data) => {
+export const setCurrentData = async (currentCategory, data) => {
   let currentData;
   switch (currentCategory) {
     case 'people':
@@ -61,18 +61,17 @@ export const peopleList = data => {
       ...promiseData
     };
   });
-
   return Promise.all(unresolvedPromises);
 };
 
-const getHomeworldData = async person => {
+export const getHomeworldData = async person => {
   const response = await fetch(person.homeworld);
   const data = await response.json();
   const { name: planet, population } = data;
   return { planet, population };
 };
 
-const getSpeciesData = async person => {
+export const getSpeciesData = async person => {
   const response = await fetch(person.species[0]);
   const data = await response.json();
   return { species: data.name };

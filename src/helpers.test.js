@@ -1,5 +1,10 @@
 import React from 'react';
-import { filmFetchCall, randomFilmData, initialFetchCall } from './helpers';
+import {
+  filmFetchCall,
+  randomFilmData,
+  initialFetchCall,
+  setCurrentData
+} from './helpers';
 import { mockPeopleFetch, mockPlanetFetch, mockVehicleFetch } from './MockData';
 
 describe('helpers file', () => {
@@ -97,4 +102,42 @@ describe('helpers file', () => {
       expect(result.length).toEqual(10);
     });
   });
+
+  describe('setCurrentData', () => {
+    it('should make a fetch call with the correct params', () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockPeopleFetch)
+        })
+      );
+      setCurrentData('people', mockPeopleFetch);
+      expect(window.fetch).toHaveBeenCalledWith(
+        'https://swapi.co/api/planets/20/'
+      );
+      expect(window.fetch).toHaveBeenCalledWith(
+        'https://swapi.co/api/species/1/'
+      );
+    });
+
+    it('should return an array of planets objects when the current category is planets', async () => {
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockPlanetFetch)
+        })
+      );
+      const result = await initialFetchCall('planets');
+      expect(result.length).toEqual(10);
+    });
+  });
+
+  // describe('peopleList', () => {
+  //   window.fetch = jest.fn().mockImplementation(() => (
+  //     Promise.resolve({
+  //       json: () => Promise.resolve()
+  //     })
+  //   ))
+  //   it('should return an array of the correct length', () => {
+
+  //   })
+  // });
 });

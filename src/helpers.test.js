@@ -3,7 +3,8 @@ import {
   filmFetchCall,
   randomFilmData,
   initialFetchCall,
-  setCurrentData
+  setCurrentData,
+  getHomeworldData
 } from './helpers';
 import { mockPeopleFetch, mockPlanetFetch, mockVehicleFetch } from './MockData';
 
@@ -140,4 +141,86 @@ describe('helpers file', () => {
 
   //   })
   // });
+
+  describe('getHomeWorldData', () => {
+    let mockHomeworldData;
+    beforeEach(() => {
+      mockHomeworldData = {
+        name: 'Naboo',
+        rotation_period: '26',
+        orbital_period: '312',
+        diameter: '12120',
+        climate: 'temperate',
+        gravity: '1 standard',
+        terrain: 'grassy hills, swamps, forests, mountains',
+        surface_water: '12',
+        population: '4500000000',
+        residents: [
+          'https://swapi.co/api/people/3/',
+          'https://swapi.co/api/people/21/',
+          'https://swapi.co/api/people/36/',
+          'https://swapi.co/api/people/37/',
+          'https://swapi.co/api/people/38/',
+          'https://swapi.co/api/people/39/',
+          'https://swapi.co/api/people/42/',
+          'https://swapi.co/api/people/60/',
+          'https://swapi.co/api/people/61/',
+          'https://swapi.co/api/people/66/',
+          'https://swapi.co/api/people/35/'
+        ],
+        films: [
+          'https://swapi.co/api/films/5/',
+          'https://swapi.co/api/films/4/',
+          'https://swapi.co/api/films/6/',
+          'https://swapi.co/api/films/3/'
+        ],
+        created: '2014-12-10T11:52:31.066000Z',
+        edited: '2014-12-20T20:58:18.430000Z',
+        url: 'https://swapi.co/api/planets/8/'
+      };
+    });
+
+    it('should call fetch with the correct params', () => {
+      const lukeSkywalker = mockPeopleFetch.results[0];
+
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockHomeworldData)
+        })
+      );
+
+      getHomeworldData(lukeSkywalker);
+
+      expect(window.fetch).toHaveBeenCalledWith(
+        'https://swapi.co/api/planets/1/'
+      );
+    });
+
+    it('should return an object if the response is ok', async () => {
+      const lukeSkywalker = mockPeopleFetch.results[0];
+      const expected = {
+        planet: 'Naboo',
+        population: '4500000000'
+      };
+
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          json: () => Promise.resolve(mockHomeworldData)
+        })
+      );
+      const result = await getHomeworldData(lukeSkywalker);
+
+      expect(result).toEqual(expected);
+    });
+
+    it('should throw an error if something went wrong', async () => {
+      const expected = new Error('failed to fetch');
+      const lukeSkywalker = mockPeopleFetch.results[0];
+      window.fetch = jest
+        .fn()
+        .mockImplementation(() => Promise.reject(new Error('failed to fetch')));
+
+      await expect(getHomeworldData(lukeSkywalker)).rejects.toEqual(expected);
+    });
+  });
 });

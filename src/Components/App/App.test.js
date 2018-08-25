@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
+import { MemoryRouter } from 'react-router';
 import App from '../App';
 
 import { mockPeopleFetch } from '../../MockData';
@@ -22,7 +23,7 @@ describe('App component', () => {
   });
 
   it('should match the snapshot', () => {
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should set the appropriate state when setCategoryState gets invoked', async () => {
@@ -56,5 +57,68 @@ describe('App component', () => {
     expect(wrapper.state().favorites.length).toEqual(1);
     wrapper.instance().toggleFavorite(mockFavoriteOne);
     expect(wrapper.state().favorites.length).toEqual(0);
+  });
+
+  it('should match Snapshot of landing page', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match Snapshot of people page', () => {
+    render(
+      <MemoryRouter initialEntries={['/people']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match Snapshot of planets page', () => {
+    render(
+      <MemoryRouter initialEntries={['/planets']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match Snapshot of vehicles page', () => {
+    render(
+      <MemoryRouter initialEntries={['/vehicles']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call setCategoryState when a NavLink is clicked', () => {
+    wrapper
+      .find('.nav-link')
+      .first()
+      .simulate('click');
+
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/');
+  });
+
+  it('should call setCategoryState when a NavLink is clicked', () => {
+    wrapper
+      .find('.nav-link')
+      .at(1)
+      .simulate('click');
+
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/planets/');
+  });
+
+  it('should call setCategoryState when a NavLink is clicked', () => {
+    wrapper
+      .find('.nav-link')
+      .at(2)
+      .simulate('click');
+
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/vehicles/');
   });
 });

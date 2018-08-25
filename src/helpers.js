@@ -74,6 +74,7 @@ export const getHomeworldData = async person => {
 export const getSpeciesData = async person => {
   const response = await fetch(person.species[0]);
   const data = await response.json();
+
   return { species: data.name };
 };
 

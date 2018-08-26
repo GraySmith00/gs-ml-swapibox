@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component should match Snapshot of landing page 1`] = `
+exports[`App component router should match Snapshot of landing page 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App />,
@@ -1101,7 +1101,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`App component should match Snapshot of people page 1`] = `
+exports[`App component router should match Snapshot of people page 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App />,
@@ -2202,7 +2202,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`App component should match Snapshot of planets page 1`] = `
+exports[`App component router should match Snapshot of planets page 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App />,
@@ -3303,7 +3303,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`App component should match Snapshot of vehicles page 1`] = `
+exports[`App component router should match Snapshot of vehicles page 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App />,
@@ -4404,7 +4404,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`App component should match the snapshot 1`] = `
+exports[`App component snapshot should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App />,

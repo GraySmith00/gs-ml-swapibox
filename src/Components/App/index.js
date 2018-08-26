@@ -21,6 +21,10 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.checkForFavorites();
+  }
+
   setCategoryState = async category => {
     if (this.state[`${category}Data`].length === 0) {
       try {
@@ -45,10 +49,21 @@ class App extends Component {
       });
     } else {
       const newFavorites = [...this.state.favoritesData, item];
-      this.setState({
-        favoritesData: newFavorites
-      });
+      this.setState(
+        {
+          favoritesData: newFavorites
+        },
+        localStorage.setItem('favoritesData', JSON.stringify(newFavorites))
+      );
     }
+  };
+
+  checkForFavorites = () => {
+    const favoritesData =
+      JSON.parse(localStorage.getItem('favoritesData')) || [];
+    this.setState({
+      favoritesData
+    });
   };
 
   render() {
@@ -73,7 +88,7 @@ class App extends Component {
                 Vehicles
               </NavLink>
               <NavLink exact to="/favorites" className="nav-link">
-                Favorites
+                {`Favorites (${favoritesData.length})`}
               </NavLink>
             </nav>
           </div>

@@ -35,7 +35,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/people"
                                         >
                                                   People
@@ -45,7 +44,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/planets"
                                         >
                                                   Planets
@@ -55,7 +53,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/vehicles"
                                         >
                                                   Vehicles
@@ -117,7 +114,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                     >
                                                 People
@@ -127,7 +123,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                     >
                                                 Planets
@@ -137,7 +132,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                     >
                                                 Vehicles
@@ -192,7 +186,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                 >
                                                 People
@@ -202,7 +195,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                 >
                                                 Planets
@@ -212,7 +204,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                 >
                                                 Vehicles
@@ -265,7 +256,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/people"
                     >
                                         People
@@ -275,7 +265,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/planets"
                     >
                                         Planets
@@ -285,7 +274,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/vehicles"
                     >
                                         Vehicles
@@ -319,7 +307,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/people"
 >
                         People
@@ -329,7 +316,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/planets"
 >
                         Planets
@@ -339,7 +325,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/vehicles"
 >
                         Vehicles
@@ -359,7 +344,6 @@ ShallowWrapper {
                         "children": "People",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/people",
                       },
                       "ref": null,
@@ -376,7 +360,6 @@ ShallowWrapper {
                         "children": "Planets",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/planets",
                       },
                       "ref": null,
@@ -393,7 +376,6 @@ ShallowWrapper {
                         "children": "Vehicles",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/vehicles",
                       },
                       "ref": null,
@@ -571,7 +553,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/people"
                                                 >
                                                             People
@@ -581,7 +562,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/planets"
                                                 >
                                                             Planets
@@ -591,7 +571,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/vehicles"
                                                 >
                                                             Vehicles
@@ -653,7 +632,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/people"
                                           >
                                                         People
@@ -663,7 +641,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/planets"
                                           >
                                                         Planets
@@ -673,7 +650,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/vehicles"
                                           >
                                                         Vehicles
@@ -728,7 +704,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/people"
                                     >
                                                       People
@@ -738,7 +713,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/planets"
                                     >
                                                       Planets
@@ -748,7 +722,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/vehicles"
                                     >
                                                       Vehicles
@@ -801,7 +774,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/people"
                       >
                                             People
@@ -811,7 +783,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/planets"
                       >
                                             Planets
@@ -821,7 +792,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/vehicles"
                       >
                                             Vehicles
@@ -855,7 +825,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/people"
 >
                           People
@@ -865,7 +834,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/planets"
 >
                           Planets
@@ -875,7 +843,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/vehicles"
 >
                           Vehicles
@@ -895,7 +862,6 @@ ShallowWrapper {
                           "children": "People",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/people",
                         },
                         "ref": null,
@@ -912,7 +878,6 @@ ShallowWrapper {
                           "children": "Planets",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/planets",
                         },
                         "ref": null,
@@ -929,7 +894,6 @@ ShallowWrapper {
                           "children": "Vehicles",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/vehicles",
                         },
                         "ref": null,
@@ -1136,7 +1100,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/people"
                                         >
                                                   People
@@ -1146,7 +1109,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/planets"
                                         >
                                                   Planets
@@ -1156,7 +1118,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/vehicles"
                                         >
                                                   Vehicles
@@ -1218,7 +1179,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                     >
                                                 People
@@ -1228,7 +1188,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                     >
                                                 Planets
@@ -1238,7 +1197,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                     >
                                                 Vehicles
@@ -1293,7 +1251,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                 >
                                                 People
@@ -1303,7 +1260,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                 >
                                                 Planets
@@ -1313,7 +1269,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                 >
                                                 Vehicles
@@ -1366,7 +1321,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/people"
                     >
                                         People
@@ -1376,7 +1330,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/planets"
                     >
                                         Planets
@@ -1386,7 +1339,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/vehicles"
                     >
                                         Vehicles
@@ -1420,7 +1372,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/people"
 >
                         People
@@ -1430,7 +1381,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/planets"
 >
                         Planets
@@ -1440,7 +1390,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/vehicles"
 >
                         Vehicles
@@ -1460,7 +1409,6 @@ ShallowWrapper {
                         "children": "People",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/people",
                       },
                       "ref": null,
@@ -1477,7 +1425,6 @@ ShallowWrapper {
                         "children": "Planets",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/planets",
                       },
                       "ref": null,
@@ -1494,7 +1441,6 @@ ShallowWrapper {
                         "children": "Vehicles",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/vehicles",
                       },
                       "ref": null,
@@ -1672,7 +1618,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/people"
                                                 >
                                                             People
@@ -1682,7 +1627,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/planets"
                                                 >
                                                             Planets
@@ -1692,7 +1636,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/vehicles"
                                                 >
                                                             Vehicles
@@ -1754,7 +1697,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/people"
                                           >
                                                         People
@@ -1764,7 +1706,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/planets"
                                           >
                                                         Planets
@@ -1774,7 +1715,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/vehicles"
                                           >
                                                         Vehicles
@@ -1829,7 +1769,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/people"
                                     >
                                                       People
@@ -1839,7 +1778,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/planets"
                                     >
                                                       Planets
@@ -1849,7 +1787,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/vehicles"
                                     >
                                                       Vehicles
@@ -1902,7 +1839,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/people"
                       >
                                             People
@@ -1912,7 +1848,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/planets"
                       >
                                             Planets
@@ -1922,7 +1857,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/vehicles"
                       >
                                             Vehicles
@@ -1956,7 +1890,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/people"
 >
                           People
@@ -1966,7 +1899,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/planets"
 >
                           Planets
@@ -1976,7 +1908,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/vehicles"
 >
                           Vehicles
@@ -1996,7 +1927,6 @@ ShallowWrapper {
                           "children": "People",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/people",
                         },
                         "ref": null,
@@ -2013,7 +1943,6 @@ ShallowWrapper {
                           "children": "Planets",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/planets",
                         },
                         "ref": null,
@@ -2030,7 +1959,6 @@ ShallowWrapper {
                           "children": "Vehicles",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/vehicles",
                         },
                         "ref": null,
@@ -2237,7 +2165,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/people"
                                         >
                                                   People
@@ -2247,7 +2174,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/planets"
                                         >
                                                   Planets
@@ -2257,7 +2183,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/vehicles"
                                         >
                                                   Vehicles
@@ -2319,7 +2244,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                     >
                                                 People
@@ -2329,7 +2253,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                     >
                                                 Planets
@@ -2339,7 +2262,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                     >
                                                 Vehicles
@@ -2394,7 +2316,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                 >
                                                 People
@@ -2404,7 +2325,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                 >
                                                 Planets
@@ -2414,7 +2334,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                 >
                                                 Vehicles
@@ -2467,7 +2386,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/people"
                     >
                                         People
@@ -2477,7 +2395,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/planets"
                     >
                                         Planets
@@ -2487,7 +2404,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/vehicles"
                     >
                                         Vehicles
@@ -2521,7 +2437,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/people"
 >
                         People
@@ -2531,7 +2446,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/planets"
 >
                         Planets
@@ -2541,7 +2455,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/vehicles"
 >
                         Vehicles
@@ -2561,7 +2474,6 @@ ShallowWrapper {
                         "children": "People",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/people",
                       },
                       "ref": null,
@@ -2578,7 +2490,6 @@ ShallowWrapper {
                         "children": "Planets",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/planets",
                       },
                       "ref": null,
@@ -2595,7 +2506,6 @@ ShallowWrapper {
                         "children": "Vehicles",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/vehicles",
                       },
                       "ref": null,
@@ -2773,7 +2683,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/people"
                                                 >
                                                             People
@@ -2783,7 +2692,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/planets"
                                                 >
                                                             Planets
@@ -2793,7 +2701,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/vehicles"
                                                 >
                                                             Vehicles
@@ -2855,7 +2762,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/people"
                                           >
                                                         People
@@ -2865,7 +2771,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/planets"
                                           >
                                                         Planets
@@ -2875,7 +2780,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/vehicles"
                                           >
                                                         Vehicles
@@ -2930,7 +2834,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/people"
                                     >
                                                       People
@@ -2940,7 +2843,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/planets"
                                     >
                                                       Planets
@@ -2950,7 +2852,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/vehicles"
                                     >
                                                       Vehicles
@@ -3003,7 +2904,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/people"
                       >
                                             People
@@ -3013,7 +2913,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/planets"
                       >
                                             Planets
@@ -3023,7 +2922,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/vehicles"
                       >
                                             Vehicles
@@ -3057,7 +2955,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/people"
 >
                           People
@@ -3067,7 +2964,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/planets"
 >
                           Planets
@@ -3077,7 +2973,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/vehicles"
 >
                           Vehicles
@@ -3097,7 +2992,6 @@ ShallowWrapper {
                           "children": "People",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/people",
                         },
                         "ref": null,
@@ -3114,7 +3008,6 @@ ShallowWrapper {
                           "children": "Planets",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/planets",
                         },
                         "ref": null,
@@ -3131,7 +3024,6 @@ ShallowWrapper {
                           "children": "Vehicles",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/vehicles",
                         },
                         "ref": null,
@@ -3338,7 +3230,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/people"
                                         >
                                                   People
@@ -3348,7 +3239,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/planets"
                                         >
                                                   Planets
@@ -3358,7 +3248,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/vehicles"
                                         >
                                                   Vehicles
@@ -3420,7 +3309,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                     >
                                                 People
@@ -3430,7 +3318,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                     >
                                                 Planets
@@ -3440,7 +3327,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                     >
                                                 Vehicles
@@ -3495,7 +3381,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                 >
                                                 People
@@ -3505,7 +3390,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                 >
                                                 Planets
@@ -3515,7 +3399,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                 >
                                                 Vehicles
@@ -3568,7 +3451,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/people"
                     >
                                         People
@@ -3578,7 +3460,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/planets"
                     >
                                         Planets
@@ -3588,7 +3469,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/vehicles"
                     >
                                         Vehicles
@@ -3622,7 +3502,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/people"
 >
                         People
@@ -3632,7 +3511,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/planets"
 >
                         Planets
@@ -3642,7 +3520,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/vehicles"
 >
                         Vehicles
@@ -3662,7 +3539,6 @@ ShallowWrapper {
                         "children": "People",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/people",
                       },
                       "ref": null,
@@ -3679,7 +3555,6 @@ ShallowWrapper {
                         "children": "Planets",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/planets",
                       },
                       "ref": null,
@@ -3696,7 +3571,6 @@ ShallowWrapper {
                         "children": "Vehicles",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/vehicles",
                       },
                       "ref": null,
@@ -3874,7 +3748,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/people"
                                                 >
                                                             People
@@ -3884,7 +3757,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/planets"
                                                 >
                                                             Planets
@@ -3894,7 +3766,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/vehicles"
                                                 >
                                                             Vehicles
@@ -3956,7 +3827,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/people"
                                           >
                                                         People
@@ -3966,7 +3836,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/planets"
                                           >
                                                         Planets
@@ -3976,7 +3845,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/vehicles"
                                           >
                                                         Vehicles
@@ -4031,7 +3899,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/people"
                                     >
                                                       People
@@ -4041,7 +3908,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/planets"
                                     >
                                                       Planets
@@ -4051,7 +3917,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/vehicles"
                                     >
                                                       Vehicles
@@ -4104,7 +3969,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/people"
                       >
                                             People
@@ -4114,7 +3978,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/planets"
                       >
                                             Planets
@@ -4124,7 +3987,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/vehicles"
                       >
                                             Vehicles
@@ -4158,7 +4020,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/people"
 >
                           People
@@ -4168,7 +4029,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/planets"
 >
                           Planets
@@ -4178,7 +4038,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/vehicles"
 >
                           Vehicles
@@ -4198,7 +4057,6 @@ ShallowWrapper {
                           "children": "People",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/people",
                         },
                         "ref": null,
@@ -4215,7 +4073,6 @@ ShallowWrapper {
                           "children": "Planets",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/planets",
                         },
                         "ref": null,
@@ -4232,7 +4089,6 @@ ShallowWrapper {
                           "children": "Vehicles",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/vehicles",
                         },
                         "ref": null,
@@ -4439,7 +4295,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/people"
                                         >
                                                   People
@@ -4449,7 +4304,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/planets"
                                         >
                                                   Planets
@@ -4459,7 +4313,6 @@ ShallowWrapper {
                                                   aria-current="page"
                                                   className="nav-link"
                                                   exact={true}
-                                                  onClick={[Function]}
                                                   to="/vehicles"
                                         >
                                                   Vehicles
@@ -4521,7 +4374,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                     >
                                                 People
@@ -4531,7 +4383,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                     >
                                                 Planets
@@ -4541,7 +4392,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                     >
                                                 Vehicles
@@ -4596,7 +4446,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/people"
                                 >
                                                 People
@@ -4606,7 +4455,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/planets"
                                 >
                                                 Planets
@@ -4616,7 +4464,6 @@ ShallowWrapper {
                                                 aria-current="page"
                                                 className="nav-link"
                                                 exact={true}
-                                                onClick={[Function]}
                                                 to="/vehicles"
                                 >
                                                 Vehicles
@@ -4669,7 +4516,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/people"
                     >
                                         People
@@ -4679,7 +4525,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/planets"
                     >
                                         Planets
@@ -4689,7 +4534,6 @@ ShallowWrapper {
                                         aria-current="page"
                                         className="nav-link"
                                         exact={true}
-                                        onClick={[Function]}
                                         to="/vehicles"
                     >
                                         Vehicles
@@ -4723,7 +4567,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/people"
 >
                         People
@@ -4733,7 +4576,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/planets"
 >
                         Planets
@@ -4743,7 +4585,6 @@ ShallowWrapper {
                         aria-current="page"
                         className="nav-link"
                         exact={true}
-                        onClick={[Function]}
                         to="/vehicles"
 >
                         Vehicles
@@ -4763,7 +4604,6 @@ ShallowWrapper {
                         "children": "People",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/people",
                       },
                       "ref": null,
@@ -4780,7 +4620,6 @@ ShallowWrapper {
                         "children": "Planets",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/planets",
                       },
                       "ref": null,
@@ -4797,7 +4636,6 @@ ShallowWrapper {
                         "children": "Vehicles",
                         "className": "nav-link",
                         "exact": true,
-                        "onClick": [Function],
                         "to": "/vehicles",
                       },
                       "ref": null,
@@ -4975,7 +4813,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/people"
                                                 >
                                                             People
@@ -4985,7 +4822,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/planets"
                                                 >
                                                             Planets
@@ -4995,7 +4831,6 @@ ShallowWrapper {
                                                             aria-current="page"
                                                             className="nav-link"
                                                             exact={true}
-                                                            onClick={[Function]}
                                                             to="/vehicles"
                                                 >
                                                             Vehicles
@@ -5057,7 +4892,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/people"
                                           >
                                                         People
@@ -5067,7 +4901,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/planets"
                                           >
                                                         Planets
@@ -5077,7 +4910,6 @@ ShallowWrapper {
                                                         aria-current="page"
                                                         className="nav-link"
                                                         exact={true}
-                                                        onClick={[Function]}
                                                         to="/vehicles"
                                           >
                                                         Vehicles
@@ -5132,7 +4964,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/people"
                                     >
                                                       People
@@ -5142,7 +4973,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/planets"
                                     >
                                                       Planets
@@ -5152,7 +4982,6 @@ ShallowWrapper {
                                                       aria-current="page"
                                                       className="nav-link"
                                                       exact={true}
-                                                      onClick={[Function]}
                                                       to="/vehicles"
                                     >
                                                       Vehicles
@@ -5205,7 +5034,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/people"
                       >
                                             People
@@ -5215,7 +5043,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/planets"
                       >
                                             Planets
@@ -5225,7 +5052,6 @@ ShallowWrapper {
                                             aria-current="page"
                                             className="nav-link"
                                             exact={true}
-                                            onClick={[Function]}
                                             to="/vehicles"
                       >
                                             Vehicles
@@ -5259,7 +5085,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/people"
 >
                           People
@@ -5269,7 +5094,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/planets"
 >
                           Planets
@@ -5279,7 +5103,6 @@ ShallowWrapper {
                           aria-current="page"
                           className="nav-link"
                           exact={true}
-                          onClick={[Function]}
                           to="/vehicles"
 >
                           Vehicles
@@ -5299,7 +5122,6 @@ ShallowWrapper {
                           "children": "People",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/people",
                         },
                         "ref": null,
@@ -5316,7 +5138,6 @@ ShallowWrapper {
                           "children": "Planets",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/planets",
                         },
                         "ref": null,
@@ -5333,7 +5154,6 @@ ShallowWrapper {
                           "children": "Vehicles",
                           "className": "nav-link",
                           "exact": true,
-                          "onClick": [Function],
                           "to": "/vehicles",
                         },
                         "ref": null,

@@ -120,19 +120,21 @@ describe('App component', () => {
     });
 
     it('should call setCategoryState when a NavLink is clicked', () => {
-      wrapper
-        .find('.nav-link')
-        .first()
-        .simulate('click');
+      render(
+        <MemoryRouter initialEntries={['/people']}>
+          <App />
+        </MemoryRouter>
+      );
 
       expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/');
     });
 
     it('should call setCategoryState when a NavLink is clicked', () => {
-      wrapper
-        .find('.nav-link')
-        .at(1)
-        .simulate('click');
+      render(
+        <MemoryRouter initialEntries={['/planets']}>
+          <App />
+        </MemoryRouter>
+      );
 
       expect(window.fetch).toHaveBeenCalledWith(
         'https://swapi.co/api/planets/'
@@ -140,10 +142,11 @@ describe('App component', () => {
     });
 
     it('should call setCategoryState when a NavLink is clicked', () => {
-      wrapper
-        .find('.nav-link')
-        .at(2)
-        .simulate('click');
+      render(
+        <MemoryRouter initialEntries={['/vehicles']}>
+          <App />
+        </MemoryRouter>
+      );
 
       expect(window.fetch).toHaveBeenCalledWith(
         'https://swapi.co/api/vehicles/'

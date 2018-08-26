@@ -26,6 +26,23 @@ describe('App component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should only fetch the data if the state has not already been set', () => {
+    const mockPerson = {
+      name: 'Alderaan',
+      favorite: false,
+      terrain: 'grasslands, mountains',
+      climate: 'temperate',
+      population: '2000000000',
+      residents: ['Leia Organa', 'Bail Prestor Organa', 'Raymus Antilles']
+    };
+
+    wrapper.setState({ peopleData: [mockPerson] });
+    wrapper.instance().setCategoryState('people');
+
+    expect(window.fetch).not.toHaveBeenCalled();
+    expect(wrapper.state().peopleData.length).toEqual(1);
+  });
+
   it('should set the appropriate state when setCategoryState gets invoked', async () => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({

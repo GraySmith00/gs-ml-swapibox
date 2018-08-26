@@ -11,10 +11,19 @@
   -webkit-box-shadow: 10px 10px 62px -22px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 62px -22px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 62px -22px rgba(0, 0, 0, 0.75);
+
+  &:hover {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6);
+    transform: translateY(-1px);
+  }
 }
 
 i {
   margin: 0.5em 0;
+}
+
+i.star.far.fa-star::before {
+  cursor: pointer;
 }
 
 .card-image {

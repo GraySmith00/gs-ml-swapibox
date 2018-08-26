@@ -15,7 +15,11 @@ const CategoryCard = ({ item, toggleFavorite }) => {
           <div key={`${itemKey}-${index}`}>
             <img
               className="card-image"
-              src={require(`../../images/people/${imageName}.jpg`)}
+              src={
+                require(`../../images/people/${imageName}.jpg`)
+                  ? require(`../../images/people/${imageName}.jpg`)
+                  : require('../../images/default_image.jpg')
+              }
               alt={imageName}
             />
             <h3>{item[itemKey]}</h3>

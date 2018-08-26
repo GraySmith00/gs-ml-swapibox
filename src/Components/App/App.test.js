@@ -5,8 +5,6 @@ import App from '../App';
 
 import { mockPeopleFetch } from '../../MockData';
 
-import CategoryContainer from '../CategoryContainer';
-
 describe('App component', () => {
   let wrapper;
   let mockFavoriteOne;

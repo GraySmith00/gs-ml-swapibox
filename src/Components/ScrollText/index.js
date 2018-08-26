@@ -31,11 +31,7 @@ class ScrollText extends Component {
     return (
       <section className="scrolltext-container">
         <div className="crawl">
-          <p>{quote}</p>
-          <div className="film-info">
-            <p>{title}</p>
-            <h1>{date}</h1>
-          </div>
+          <p>{`${quote}, ${title}, ${date}`}</p>
         </div>
       </section>
     );

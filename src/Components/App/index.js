@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  NavLink,
-  Switch
-} from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 
 import ScrollText from '../ScrollText';
 import Landing from '../Landing';
@@ -59,68 +54,72 @@ class App extends Component {
   render() {
     const { peopleData, planetsData, vehiclesData } = this.state;
     return (
-      <div className="App">
-        <Router>
-          <div>
-            <header className="App-header">
-              <h1 className="App-title">SWAPIbox</h1>
-              <nav className="nav-btns">
-                <NavLink exact to="/people" className="nav-link">
-                  People
-                </NavLink>
-                <NavLink exact to="/planets" className="nav-link">
-                  Planets
-                </NavLink>
-                <NavLink exact to="/vehicles" className="nav-link">
-                  Vehicles
-                </NavLink>
-              </nav>
-            </header>
-            <main>
-              <Switch>
-                <Route exact path="/" component={Landing} />
-                <Route
-                  path="/people"
-                  render={() => {
-                    this.setCategoryState('people');
-                    return (
-                      <CategoryContainer
-                        toggleFavorite={this.toggleFavorite}
-                        currentData={peopleData}
-                      />
-                    );
-                  }}
-                />
-                <Route
-                  exact
-                  path="/planets"
-                  render={() => {
-                    this.setCategoryState('planets');
-                    return (
-                      <CategoryContainer
-                        toggleFavorite={this.toggleFavorite}
-                        currentData={planetsData}
-                      />
-                    );
-                  }}
-                />
-                <Route
-                  exact
-                  path="/vehicles"
-                  render={() => {
-                    this.setCategoryState('vehicles');
-                    return (
-                      <CategoryContainer
-                        toggleFavorite={this.toggleFavorite}
-                        currentData={vehiclesData}
-                      />
-                    );
-                  }}
-                />
-              </Switch>
-            </main>
+      <div className="app">
+        <header className="header">
+          <div className="header-container">
+            <img
+              className="brand-image"
+              src={require('../../images/starWarsLogoOneLine.png')}
+              alt="star wars logo"
+            />
+            <nav className="nav-btns">
+              <NavLink exact to="/people" className="nav-link">
+                People
+              </NavLink>
+              <NavLink exact to="/planets" className="nav-link">
+                Planets
+              </NavLink>
+              <NavLink exact to="/vehicles" className="nav-link">
+                Vehicles
+              </NavLink>
+            </nav>
           </div>
-        </Router>
+        </header>
+        <main>
+          <div className="main-container">
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route
+                path="/people"
+                render={() => {
+                  this.setCategoryState('people');
+                  return (
+                    <CategoryContainer
+                      toggleFavorite={this.toggleFavorite}
+                      currentData={peopleData}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/planets"
+                render={() => {
+                  this.setCategoryState('planets');
+                  return (
+                    <CategoryContainer
+                      toggleFavorite={this.toggleFavorite}
+                      currentData={planetsData}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/vehicles"
+                render={() => {
+                  this.setCategoryState('vehicles');
+                  return (
+                    <CategoryContainer
+                      toggleFavorite={this.toggleFavorite}
+                      currentData={vehiclesData}
+                    />
+                  );
+                }}
+              />
+            </Switch>
+          </div>
+        </main>
         <footer>
           <ScrollText />
         </footer>

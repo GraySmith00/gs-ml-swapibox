@@ -1,17 +1,50 @@
-.App {
-  text-align: center; }
+.app {
+  margin: 0 auto;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
 
-.App-logo {
-  height: 80px; }
+.header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 0 20px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 1.5em;
+  color: #fff;
+}
 
-.App-header {
-  background-color: burlywood;
-  height: 150px;
-  padding: 20px;
-  color: white; }
+.header-container,
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 80%;
+  margin: 0 auto;
+}
+
+.brand-image {
+  height: 1em;
+}
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.nav-link {
+  text-decoration: none;
+}
 
 .App-title {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+}
 
 .App-intro {
-  font-size: large; }
+  font-size: large;
+}
+
+.nav-link {
+  color: #fff;
+}

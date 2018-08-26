@@ -6,29 +6,23 @@
   color: #fff;
   font-size: 1.5rem;
   height: 4rem;
-  letter-spacing: 2px;
-}
+  letter-spacing: 2px; }
 
 @keyframes scrolltext-container {
   0% {
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
+    visibility: visible; }
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
+    transform: translate3d(-100%, 0, 0); } }
 
 footer {
   display: flex;
   align-items: center;
-
   position: fixed;
   bottom: 0;
-  width: 100%;
-}
+  width: 100%; }
 
 .crawl {
   display: flex;
@@ -43,5 +37,4 @@ footer {
   -webkit-animation-name: scrolltext-container;
   animation-name: scrolltext-container;
   -webkit-animation-duration: 75s;
-  animation-duration: 75s;
-}
+  animation-duration: 75s; }

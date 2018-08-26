@@ -1,11 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { imgName } from '../../helpers';
+
+import './CategoryCard.css';
+
 const CategoryCard = ({ item, toggleFavorite }) => {
-  const cards = Object.keys(item).map((itemKey, index) => {
+  const card = Object.keys(item).map((itemKey, index) => {
+    let imageName;
+    if (itemKey === 'name') imageName = imgName(item, itemKey);
     switch (itemKey) {
       case 'name':
-        return <h3 key={`${itemKey}-${index}`}>{item[itemKey]}</h3>;
+        return (
+          <div key={`${itemKey}-${index}`}>
+            <img
+              className="card-image"
+              src={require(`../../images/people/${imageName}.jpg`)}
+              alt={imageName}
+            />
+            <h3>{item[itemKey]}</h3>
+          </div>
+        );
       case 'favorite':
         return (
           <i
@@ -20,7 +35,7 @@ const CategoryCard = ({ item, toggleFavorite }) => {
         );
     }
   });
-  return <div>{cards}</div>;
+  return <div className="category-card">{card}</div>;
 };
 
 CategoryCard.propTypes = {
@@ -29,17 +44,3 @@ CategoryCard.propTypes = {
 };
 
 export default CategoryCard;
-
-// {
-//   name,
-//   planet,
-//   population,
-//   species,
-//   favorite,
-//   climate,
-//   residents,
-//   terrain,
-//   model,
-//   passengers,
-//   vehicle_class
-// }

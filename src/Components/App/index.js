@@ -49,12 +49,10 @@ class App extends Component {
       });
     } else {
       const newFavorites = [...this.state.favoritesData, item];
-      this.setState(
-        {
-          favoritesData: newFavorites
-        },
-        localStorage.setItem('favoritesData', JSON.stringify(newFavorites))
-      );
+      this.setState({
+        favoritesData: newFavorites
+      });
+      localStorage.setItem('favoritesData', JSON.stringify(newFavorites));
     }
   };
 
@@ -138,15 +136,12 @@ class App extends Component {
               <Route
                 exact
                 path="/favorites"
-                render={() => {
-                  this.setCategoryState('favorites');
-                  return (
-                    <CategoryContainer
-                      toggleFavorite={this.toggleFavorite}
-                      currentData={favoritesData}
-                    />
-                  );
-                }}
+                render={() => (
+                  <CategoryContainer
+                    toggleFavorite={this.toggleFavorite}
+                    currentData={favoritesData}
+                  />
+                )}
               />
             </Switch>
           </div>

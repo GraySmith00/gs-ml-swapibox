@@ -5,12 +5,15 @@ import App from '../App';
 
 import { mockPeopleFetch } from '../../MockData';
 
+import CategoryContainer from '../CategoryContainer';
+
 describe('App component', () => {
   let wrapper;
   let mockFavoriteOne;
   let mockFavoriteTwo;
 
   beforeEach(() => {
+    localStorage.clear();
     mockFavoriteOne = mockPeopleFetch.results[0];
     mockFavoriteTwo = mockPeopleFetch.results[1];
 
@@ -71,14 +74,14 @@ describe('App component', () => {
     it('should add categoryCard to favorites array', () => {
       wrapper.instance().toggleFavorite(mockFavoriteOne);
       wrapper.instance().toggleFavorite(mockFavoriteTwo);
-      expect(wrapper.state().favorites.length).toEqual(2);
+      expect(wrapper.state().favoritesData.length).toEqual(2);
     });
 
     it('should remove categoryCard from favorites array if categoryCard already exists in favorites array', () => {
       wrapper.instance().toggleFavorite(mockFavoriteOne);
-      expect(wrapper.state().favorites.length).toEqual(1);
+      expect(wrapper.state().favoritesData.length).toEqual(1);
       wrapper.instance().toggleFavorite(mockFavoriteOne);
-      expect(wrapper.state().favorites.length).toEqual(0);
+      expect(wrapper.state().favoritesData.length).toEqual(0);
     });
   });
 
@@ -119,7 +122,7 @@ describe('App component', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should call setCategoryState when a NavLink is clicked', () => {
+    it('should call setCategoryState when the people NavLink is clicked', () => {
       render(
         <MemoryRouter initialEntries={['/people']}>
           <App />
@@ -129,7 +132,7 @@ describe('App component', () => {
       expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/');
     });
 
-    it('should call setCategoryState when a NavLink is clicked', () => {
+    it('should call setCategoryState when the planets NavLink is clicked', () => {
       render(
         <MemoryRouter initialEntries={['/planets']}>
           <App />
@@ -141,7 +144,7 @@ describe('App component', () => {
       );
     });
 
-    it('should call setCategoryState when a NavLink is clicked', () => {
+    it('should call setCategoryState when the vehicles NavLink is clicked', () => {
       render(
         <MemoryRouter initialEntries={['/vehicles']}>
           <App />
@@ -151,6 +154,15 @@ describe('App component', () => {
       expect(window.fetch).toHaveBeenCalledWith(
         'https://swapi.co/api/vehicles/'
       );
+    });
+
+    it('should render a CategoryContainer component when the favorites NavLink is clicked', () => {
+      render(
+        <MemoryRouter initialEntries={['/favorites']}>
+          <App />
+        </MemoryRouter>
+      );
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

@@ -2,5 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Pathway Gothic One', sans-serif;
-  background: papayawhip;
+  background: url('./images/starWarsBackgroundCrop.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }

@@ -106,3 +106,10 @@ export const vehicleList = data => {
     return { name, favorite: false, model, vehicle_class, passengers };
   });
 };
+
+export const imgName = (item, itemKey) => {
+  return item[itemKey]
+    .split(' ')
+    .join('_')
+    .toLowerCase();
+};

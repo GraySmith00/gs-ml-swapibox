@@ -93,16 +93,44 @@ class App extends Component {
               alt="star wars logo"
             />
             <nav className="nav-btns">
-              <NavLink exact to="/people" className="nav-link">
+              <NavLink
+                exact
+                to="/people"
+                className="nav-link"
+                activeStyle={{
+                  color: '#feda4a'
+                }}
+              >
                 People
               </NavLink>
-              <NavLink exact to="/planets" className="nav-link">
+              <NavLink
+                exact
+                to="/planets"
+                className="nav-link"
+                activeStyle={{
+                  color: '#feda4a'
+                }}
+              >
                 Planets
               </NavLink>
-              <NavLink exact to="/vehicles" className="nav-link">
+              <NavLink
+                exact
+                to="/vehicles"
+                className="nav-link"
+                activeStyle={{
+                  color: '#feda4a'
+                }}
+              >
                 Vehicles
               </NavLink>
-              <NavLink exact to="/favorites" className="nav-link">
+              <NavLink
+                exact
+                to="/favorites"
+                className="nav-link"
+                activeStyle={{
+                  color: '#feda4a'
+                }}
+              >
                 {`Favorites (${favoritesData.length})`}
               </NavLink>
             </nav>

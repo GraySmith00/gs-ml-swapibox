@@ -6,7 +6,7 @@
 
   border-radius: 5px;
   color: #020202;
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(250, 250, 250, 0.7);
 
   -webkit-box-shadow: 10px 10px 62px -22px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 62px -22px rgba(0, 0, 0, 0.75);
@@ -35,5 +35,9 @@ i.star.far.fa-star::before {
 p,
 i,
 h3 {
-  margin: 0.5em 2em;
+  margin: 0.5rem 2rem;
+}
+
+h3 {
+  margin-left: 2rem;
 }

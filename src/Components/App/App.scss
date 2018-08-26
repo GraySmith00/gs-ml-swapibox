@@ -49,3 +49,35 @@
 .nav-link {
   color: #fff;
 }
+
+@media screen and (max-width: 900px) {
+  .header-container,
+  .main-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .header-container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .brand-image {
+    margin-bottom: 1rem;
+  }
+
+  .nav-btns {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .nav-btns {
+    width: 95%;
+  }
+
+  .nav-link {
+    margin-left: 0;
+  }
+}

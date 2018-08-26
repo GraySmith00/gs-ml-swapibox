@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      favorites: [],
+      favoritesData: [],
       peopleData: [],
       planetsData: [],
       vehiclesData: [],
@@ -33,26 +33,26 @@ class App extends Component {
   };
 
   toggleFavorite = item => {
-    const alreadyFavorite = this.state.favorites.find(
+    const alreadyFavorite = this.state.favoritesData.find(
       favorite => favorite.name === item.name
     );
     if (alreadyFavorite) {
-      const newFavorites = this.state.favorites.filter(
+      const newFavorites = this.state.favoritesData.filter(
         favorite => favorite.name !== item.name
       );
       this.setState({
-        favorites: newFavorites
+        favoritesData: newFavorites
       });
     } else {
-      const newFavorites = [...this.state.favorites, item];
+      const newFavorites = [...this.state.favoritesData, item];
       this.setState({
-        favorites: newFavorites
+        favoritesData: newFavorites
       });
     }
   };
 
   render() {
-    const { peopleData, planetsData, vehiclesData } = this.state;
+    const { peopleData, planetsData, vehiclesData, favoritesData } = this.state;
     return (
       <div className="app">
         <header className="header">
@@ -71,6 +71,9 @@ class App extends Component {
               </NavLink>
               <NavLink exact to="/vehicles" className="nav-link">
                 Vehicles
+              </NavLink>
+              <NavLink exact to="/favorites" className="nav-link">
+                Favorites
               </NavLink>
             </nav>
           </div>
@@ -113,6 +116,19 @@ class App extends Component {
                     <CategoryContainer
                       toggleFavorite={this.toggleFavorite}
                       currentData={vehiclesData}
+                    />
+                  );
+                }}
+              />
+              <Route
+                exact
+                path="/favorites"
+                render={() => {
+                  this.setCategoryState('favorites');
+                  return (
+                    <CategoryContainer
+                      toggleFavorite={this.toggleFavorite}
+                      currentData={favoritesData}
                     />
                   );
                 }}

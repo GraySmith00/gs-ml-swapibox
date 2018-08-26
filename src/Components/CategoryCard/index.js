@@ -8,20 +8,18 @@ import './CategoryCard.css';
 const CategoryCard = ({ item, toggleFavorite }) => {
   const card = Object.keys(item).map((itemKey, index) => {
     let imageName;
+    let imageSrc;
     if (itemKey === 'name') imageName = imgName(item, itemKey);
+    try {
+      imageSrc = require(`../../images/people/${imageName}.jpg`);
+    } catch (error) {
+      imageSrc = require('../../images/default_image.jpg');
+    }
     switch (itemKey) {
       case 'name':
         return (
           <div key={`${itemKey}-${index}`}>
-            <img
-              className="card-image"
-              src={
-                require(`../../images/people/${imageName}.jpg`)
-                  ? require(`../../images/people/${imageName}.jpg`)
-                  : require('../../images/default_image.jpg')
-              }
-              alt={imageName}
-            />
+            <img className="card-image" src={imageSrc} alt={imageName} />
             <h3>{item[itemKey]}</h3>
           </div>
         );

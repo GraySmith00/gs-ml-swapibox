@@ -8,6 +8,7 @@ describe('CategoryContainer component', () => {
   let wrapper;
   let mockCurrentData;
   let mockToggleFavorite;
+  let mockFavoritesNames;
 
   beforeEach(() => {
     mockToggleFavorite = jest.fn();
@@ -27,10 +28,12 @@ describe('CategoryContainer component', () => {
         species: 'Droid'
       }
     ];
+    mockFavoritesNames = ['Luke Skywalker', 'C-3PO'];
     wrapper = shallow(
       <CategoryContainer
         currentData={mockCurrentData}
         toggleFavorite={mockToggleFavorite}
+        favoritesNames={mockFavoritesNames}
       />
     );
   });

@@ -14,6 +14,7 @@ class App extends Component {
     super();
     this.state = {
       favoritesData: [],
+      favoritesNames: [],
       peopleData: [],
       planetsData: [],
       vehiclesData: [],
@@ -44,28 +45,44 @@ class App extends Component {
       const newFavorites = this.state.favoritesData.filter(
         favorite => favorite.name !== item.name
       );
+      const favoritesNames = newFavorites.map(favorite => favorite.name);
       this.setState({
-        favoritesData: newFavorites
-      });
-    } else {
-      const newFavorites = [...this.state.favoritesData, item];
-      this.setState({
-        favoritesData: newFavorites
+        favoritesData: newFavorites,
+        favoritesNames
       });
       localStorage.setItem('favoritesData', JSON.stringify(newFavorites));
+      localStorage.setItem('favoritesNames', JSON.stringify(favoritesNames));
+    } else {
+      const newFavorites = [...this.state.favoritesData, item];
+      const favoritesNames = newFavorites.map(favorite => favorite.name);
+      this.setState({
+        favoritesData: newFavorites,
+        favoritesNames
+      });
+      localStorage.setItem('favoritesData', JSON.stringify(newFavorites));
+      localStorage.setItem('favoritesNames', JSON.stringify(favoritesNames));
     }
   };
 
   checkForFavorites = () => {
     const favoritesData =
       JSON.parse(localStorage.getItem('favoritesData')) || [];
+    const favoritesNames =
+      JSON.parse(localStorage.getItem('favoritesNames')) || [];
     this.setState({
-      favoritesData
+      favoritesData,
+      favoritesNames
     });
   };
 
   render() {
-    const { peopleData, planetsData, vehiclesData, favoritesData } = this.state;
+    const {
+      peopleData,
+      planetsData,
+      vehiclesData,
+      favoritesData,
+      favoritesNames
+    } = this.state;
     return (
       <div className="app">
         <header className="header">
@@ -103,6 +120,7 @@ class App extends Component {
                     <CategoryContainer
                       toggleFavorite={this.toggleFavorite}
                       currentData={peopleData}
+                      favoritesNames={favoritesNames}
                     />
                   );
                 }}
@@ -116,6 +134,7 @@ class App extends Component {
                     <CategoryContainer
                       toggleFavorite={this.toggleFavorite}
                       currentData={planetsData}
+                      favoritesNames={favoritesNames}
                     />
                   );
                 }}
@@ -129,6 +148,7 @@ class App extends Component {
                     <CategoryContainer
                       toggleFavorite={this.toggleFavorite}
                       currentData={vehiclesData}
+                      favoritesNames={favoritesNames}
                     />
                   );
                 }}
@@ -140,6 +160,7 @@ class App extends Component {
                   <CategoryContainer
                     toggleFavorite={this.toggleFavorite}
                     currentData={favoritesData}
+                    favoritesNames={favoritesNames}
                   />
                 )}
               />

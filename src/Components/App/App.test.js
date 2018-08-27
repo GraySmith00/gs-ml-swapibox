@@ -4,7 +4,6 @@ import { MemoryRouter } from 'react-router';
 import App from '../App';
 
 import { mockPeopleFetch } from '../../MockData';
-import { wrap } from 'module';
 
 describe('App component', () => {
   let wrapper;

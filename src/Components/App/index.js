@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import ScrollText from '../ScrollText';
 import Landing from '../Landing';
@@ -8,6 +8,7 @@ import CategoryContainer from '../CategoryContainer';
 import { initialFetchCall } from '../../helpers';
 
 import './App.css';
+import Navigation from '../Navigation';
 
 class App extends Component {
   constructor() {
@@ -88,55 +89,7 @@ class App extends Component {
       <div className="app">
         <header className="header">
           <div className="header-container">
-            <NavLink exact to="/" className="nav-link">
-              <img
-                className="brand-image"
-                src={require('../../images/starWarsLogoOneLine.png')}
-                alt="star wars logo"
-              />
-            </NavLink>
-            <nav className="nav-btns">
-              <NavLink
-                exact
-                to="/people"
-                className="nav-link"
-                activeStyle={{
-                  color: '#feda4a'
-                }}
-              >
-                People
-              </NavLink>
-              <NavLink
-                exact
-                to="/planets"
-                className="nav-link"
-                activeStyle={{
-                  color: '#feda4a'
-                }}
-              >
-                Planets
-              </NavLink>
-              <NavLink
-                exact
-                to="/vehicles"
-                className="nav-link"
-                activeStyle={{
-                  color: '#feda4a'
-                }}
-              >
-                Vehicles
-              </NavLink>
-              <NavLink
-                exact
-                to="/favorites"
-                className="nav-link"
-                activeStyle={{
-                  color: '#feda4a'
-                }}
-              >
-                {`Favorites (${favoritesData.length})`}
-              </NavLink>
-            </nav>
+            <Navigation favoritesData={favoritesData} />
           </div>
         </header>
         <main>

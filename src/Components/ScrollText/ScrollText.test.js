@@ -1,13 +1,11 @@
 import React from 'react';
 import ScrollText from './index';
-import { shallow, mount } from 'enzyme';
-import { isObject } from 'util';
+import { mount } from 'enzyme';
 
 describe('ScrollText Component', () => {
   let wrapper;
   let mockFilm;
   let mockFilmResponse;
-  let mockFilmFetchCall;
 
   beforeEach(() => {
     wrapper = mount(<ScrollText />);

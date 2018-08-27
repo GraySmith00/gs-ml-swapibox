@@ -33,272 +33,92 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <div
+        className="header-container"
+>
         <NavLink
-          activeClassName="active"
-          aria-current="page"
-          className="nav-link"
-          exact={true}
-          to="/"
->
-          <img
-                    alt="star wars logo"
-                    className="brand-image"
-                    src="starWarsLogoOneLine.png"
-          />
-</NavLink>,
+                activeClassName="active"
+                aria-current="page"
+                className="nav-link"
+                exact={true}
+                to="/"
+        >
+                <img
+                        alt="star wars logo"
+                        className="brand-image"
+                        src="starWarsLogoOneLine.png"
+                />
+        </NavLink>
         <nav
-          className="nav-btns"
->
-          <NavLink
-                    activeClassName="active"
-                    activeStyle={
-                              Object {
+                className="nav-btns"
+        >
+                <NavLink
+                        activeClassName="active"
+                        activeStyle={
+                                Object {
                                         "color": "#feda4a",
                                       }
-                    }
-                    aria-current="page"
-                    className="nav-link"
-                    exact={true}
-                    to="/people"
-          >
-                    People
-          </NavLink>
-          <NavLink
-                    activeClassName="active"
-                    activeStyle={
-                              Object {
+                        }
+                        aria-current="page"
+                        className="nav-link"
+                        exact={true}
+                        to="/people"
+                >
+                        People
+                </NavLink>
+                <NavLink
+                        activeClassName="active"
+                        activeStyle={
+                                Object {
                                         "color": "#feda4a",
                                       }
-                    }
-                    aria-current="page"
-                    className="nav-link"
-                    exact={true}
-                    to="/planets"
-          >
-                    Planets
-          </NavLink>
-          <NavLink
-                    activeClassName="active"
-                    activeStyle={
-                              Object {
+                        }
+                        aria-current="page"
+                        className="nav-link"
+                        exact={true}
+                        to="/planets"
+                >
+                        Planets
+                </NavLink>
+                <NavLink
+                        activeClassName="active"
+                        activeStyle={
+                                Object {
                                         "color": "#feda4a",
                                       }
-                    }
-                    aria-current="page"
-                    className="nav-link"
-                    exact={true}
-                    to="/vehicles"
-          >
-                    Vehicles
-          </NavLink>
-          <NavLink
-                    activeClassName="active"
-                    activeStyle={
-                              Object {
+                        }
+                        aria-current="page"
+                        className="nav-link"
+                        exact={true}
+                        to="/vehicles"
+                >
+                        Vehicles
+                </NavLink>
+                <NavLink
+                        activeClassName="active"
+                        activeStyle={
+                                Object {
                                         "color": "#feda4a",
                                       }
-                    }
-                    aria-current="page"
-                    className="nav-link"
-                    exact={true}
-                    to="/favorites"
-          >
-                    Favorites (2)
-          </NavLink>
-</nav>,
-      ],
+                        }
+                        aria-current="page"
+                        className="nav-link"
+                        exact={true}
+                        to="/favorites"
+                >
+                        Favorites (2)
+                </NavLink>
+        </nav>
+</div>,
+      "className": "header",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "aria-current": "page",
-          "children": <img
-            alt="star wars logo"
-            className="brand-image"
-            src="starWarsLogoOneLine.png"
-/>,
-          "className": "nav-link",
-          "exact": true,
-          "to": "/",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "alt": "star wars logo",
-            "className": "brand-image",
-            "src": "starWarsLogoOneLine.png",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "img",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <NavLink
-              activeClassName="active"
-              activeStyle={
-                            Object {
-                                          "color": "#feda4a",
-                                        }
-              }
-              aria-current="page"
-              className="nav-link"
-              exact={true}
-              to="/people"
->
-              People
-</NavLink>,
-            <NavLink
-              activeClassName="active"
-              activeStyle={
-                            Object {
-                                          "color": "#feda4a",
-                                        }
-              }
-              aria-current="page"
-              className="nav-link"
-              exact={true}
-              to="/planets"
->
-              Planets
-</NavLink>,
-            <NavLink
-              activeClassName="active"
-              activeStyle={
-                            Object {
-                                          "color": "#feda4a",
-                                        }
-              }
-              aria-current="page"
-              className="nav-link"
-              exact={true}
-              to="/vehicles"
->
-              Vehicles
-</NavLink>,
-            <NavLink
-              activeClassName="active"
-              activeStyle={
-                            Object {
-                                          "color": "#feda4a",
-                                        }
-              }
-              aria-current="page"
-              className="nav-link"
-              exact={true}
-              to="/favorites"
->
-              Favorites (2)
-</NavLink>,
-          ],
-          "className": "nav-btns",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeClassName": "active",
-              "activeStyle": Object {
-                "color": "#feda4a",
-              },
-              "aria-current": "page",
-              "children": "People",
-              "className": "nav-link",
-              "exact": true,
-              "to": "/people",
-            },
-            "ref": null,
-            "rendered": "People",
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeClassName": "active",
-              "activeStyle": Object {
-                "color": "#feda4a",
-              },
-              "aria-current": "page",
-              "children": "Planets",
-              "className": "nav-link",
-              "exact": true,
-              "to": "/planets",
-            },
-            "ref": null,
-            "rendered": "Planets",
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeClassName": "active",
-              "activeStyle": Object {
-                "color": "#feda4a",
-              },
-              "aria-current": "page",
-              "children": "Vehicles",
-              "className": "nav-link",
-              "exact": true,
-              "to": "/vehicles",
-            },
-            "ref": null,
-            "rendered": "Vehicles",
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeClassName": "active",
-              "activeStyle": Object {
-                "color": "#feda4a",
-              },
-              "aria-current": "page",
-              "children": "Favorites (2)",
-              "className": "nav-link",
-              "exact": true,
-              "to": "/favorites",
-            },
-            "ref": null,
-            "rendered": "Favorites (2)",
-            "type": [Function],
-          },
-        ],
-        "type": "nav",
-      },
-    ],
-    "type": Symbol(react.fragment),
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
         "children": Array [
           <NavLink
@@ -375,6 +195,7 @@ ShallowWrapper {
             </NavLink>
 </nav>,
         ],
+        "className": "header-container",
       },
       "ref": null,
       "rendered": Array [
@@ -557,7 +378,362 @@ ShallowWrapper {
           "type": "nav",
         },
       ],
-      "type": Symbol(react.fragment),
+      "type": "div",
+    },
+    "type": "header",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="header-container"
+>
+          <NavLink
+                    activeClassName="active"
+                    aria-current="page"
+                    className="nav-link"
+                    exact={true}
+                    to="/"
+          >
+                    <img
+                              alt="star wars logo"
+                              className="brand-image"
+                              src="starWarsLogoOneLine.png"
+                    />
+          </NavLink>
+          <nav
+                    className="nav-btns"
+          >
+                    <NavLink
+                              activeClassName="active"
+                              activeStyle={
+                                        Object {
+                                                  "color": "#feda4a",
+                                                }
+                              }
+                              aria-current="page"
+                              className="nav-link"
+                              exact={true}
+                              to="/people"
+                    >
+                              People
+                    </NavLink>
+                    <NavLink
+                              activeClassName="active"
+                              activeStyle={
+                                        Object {
+                                                  "color": "#feda4a",
+                                                }
+                              }
+                              aria-current="page"
+                              className="nav-link"
+                              exact={true}
+                              to="/planets"
+                    >
+                              Planets
+                    </NavLink>
+                    <NavLink
+                              activeClassName="active"
+                              activeStyle={
+                                        Object {
+                                                  "color": "#feda4a",
+                                                }
+                              }
+                              aria-current="page"
+                              className="nav-link"
+                              exact={true}
+                              to="/vehicles"
+                    >
+                              Vehicles
+                    </NavLink>
+                    <NavLink
+                              activeClassName="active"
+                              activeStyle={
+                                        Object {
+                                                  "color": "#feda4a",
+                                                }
+                              }
+                              aria-current="page"
+                              className="nav-link"
+                              exact={true}
+                              to="/favorites"
+                    >
+                              Favorites (2)
+                    </NavLink>
+          </nav>
+</div>,
+        "className": "header",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="nav-link"
+              exact={true}
+              to="/"
+>
+              <img
+                            alt="star wars logo"
+                            className="brand-image"
+                            src="starWarsLogoOneLine.png"
+              />
+</NavLink>,
+            <nav
+              className="nav-btns"
+>
+              <NavLink
+                            activeClassName="active"
+                            activeStyle={
+                                          Object {
+                                                        "color": "#feda4a",
+                                                      }
+                            }
+                            aria-current="page"
+                            className="nav-link"
+                            exact={true}
+                            to="/people"
+              >
+                            People
+              </NavLink>
+              <NavLink
+                            activeClassName="active"
+                            activeStyle={
+                                          Object {
+                                                        "color": "#feda4a",
+                                                      }
+                            }
+                            aria-current="page"
+                            className="nav-link"
+                            exact={true}
+                            to="/planets"
+              >
+                            Planets
+              </NavLink>
+              <NavLink
+                            activeClassName="active"
+                            activeStyle={
+                                          Object {
+                                                        "color": "#feda4a",
+                                                      }
+                            }
+                            aria-current="page"
+                            className="nav-link"
+                            exact={true}
+                            to="/vehicles"
+              >
+                            Vehicles
+              </NavLink>
+              <NavLink
+                            activeClassName="active"
+                            activeStyle={
+                                          Object {
+                                                        "color": "#feda4a",
+                                                      }
+                            }
+                            aria-current="page"
+                            className="nav-link"
+                            exact={true}
+                            to="/favorites"
+              >
+                            Favorites (2)
+              </NavLink>
+</nav>,
+          ],
+          "className": "header-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "children": <img
+                alt="star wars logo"
+                className="brand-image"
+                src="starWarsLogoOneLine.png"
+/>,
+              "className": "nav-link",
+              "exact": true,
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "star wars logo",
+                "className": "brand-image",
+                "src": "starWarsLogoOneLine.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                                    Object {
+                                                      "color": "#feda4a",
+                                                    }
+                  }
+                  aria-current="page"
+                  className="nav-link"
+                  exact={true}
+                  to="/people"
+>
+                  People
+</NavLink>,
+                <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                                    Object {
+                                                      "color": "#feda4a",
+                                                    }
+                  }
+                  aria-current="page"
+                  className="nav-link"
+                  exact={true}
+                  to="/planets"
+>
+                  Planets
+</NavLink>,
+                <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                                    Object {
+                                                      "color": "#feda4a",
+                                                    }
+                  }
+                  aria-current="page"
+                  className="nav-link"
+                  exact={true}
+                  to="/vehicles"
+>
+                  Vehicles
+</NavLink>,
+                <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                                    Object {
+                                                      "color": "#feda4a",
+                                                    }
+                  }
+                  aria-current="page"
+                  className="nav-link"
+                  exact={true}
+                  to="/favorites"
+>
+                  Favorites (2)
+</NavLink>,
+              ],
+              "className": "nav-btns",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "activeStyle": Object {
+                    "color": "#feda4a",
+                  },
+                  "aria-current": "page",
+                  "children": "People",
+                  "className": "nav-link",
+                  "exact": true,
+                  "to": "/people",
+                },
+                "ref": null,
+                "rendered": "People",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "activeStyle": Object {
+                    "color": "#feda4a",
+                  },
+                  "aria-current": "page",
+                  "children": "Planets",
+                  "className": "nav-link",
+                  "exact": true,
+                  "to": "/planets",
+                },
+                "ref": null,
+                "rendered": "Planets",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "activeStyle": Object {
+                    "color": "#feda4a",
+                  },
+                  "aria-current": "page",
+                  "children": "Vehicles",
+                  "className": "nav-link",
+                  "exact": true,
+                  "to": "/vehicles",
+                },
+                "ref": null,
+                "rendered": "Vehicles",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "activeStyle": Object {
+                    "color": "#feda4a",
+                  },
+                  "aria-current": "page",
+                  "children": "Favorites (2)",
+                  "className": "nav-link",
+                  "exact": true,
+                  "to": "/favorites",
+                },
+                "ref": null,
+                "rendered": "Favorites (2)",
+                "type": [Function],
+              },
+            ],
+            "type": "nav",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "header",
     },
   ],
   Symbol(enzyme.__options__): Object {

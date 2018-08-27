@@ -87,11 +87,7 @@ class App extends Component {
     } = this.state;
     return (
       <div className="app">
-        <header className="header">
-          <div className="header-container">
-            <Navigation favoritesData={favoritesData} />
-          </div>
-        </header>
+        <Navigation favoritesData={favoritesData} />
         <main>
           <div className="main-container">
             <Switch>

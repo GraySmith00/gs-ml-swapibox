@@ -11,7 +11,7 @@ const CategoryCard = ({ item, toggleFavorite }) => {
     let imageSrc;
     if (itemKey === 'name') imageName = imgName(item, itemKey);
     try {
-      imageSrc = require(`../../images/people/${imageName}.jpg`);
+      imageSrc = require(`../../images/${imageName}.jpg`);
     } catch (error) {
       imageSrc = require('../../images/default_image.jpg');
     }

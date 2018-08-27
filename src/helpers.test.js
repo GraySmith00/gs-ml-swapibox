@@ -10,7 +10,6 @@ import {
   planetList
 } from './helpers';
 import { mockPeopleFetch, mockPlanetFetch, mockVehicleFetch } from './MockData';
-import { isatty } from 'tty';
 
 describe('helpers file', () => {
   let mockFilmResponse;

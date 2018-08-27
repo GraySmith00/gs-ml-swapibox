@@ -3,17 +3,6 @@
   font-family: 'Pathway Gothic One', sans-serif;
 }
 
-.header {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px 0 20px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  font-size: 1.5em;
-  color: #fff;
-}
-
-.header-container,
 .main-container {
   display: flex;
   justify-content: space-between;
@@ -23,31 +12,12 @@
   margin: 0 auto;
 }
 
-.brand-image {
-  height: 1em;
-}
-
-.nav-btns {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-}
-
-.nav-link {
-  text-decoration: none;
-  margin-left: 1em;
-}
-
 .App-title {
   font-size: 1.5em;
 }
 
 .App-intro {
   font-size: large;
-}
-
-.nav-link {
-  color: #fff;
 }
 
 @media screen and (max-width: 900px) {

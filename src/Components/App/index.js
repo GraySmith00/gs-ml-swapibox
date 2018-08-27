@@ -65,14 +65,15 @@ class App extends Component {
   };
 
   checkForFavorites = () => {
-    const favoritesData =
-      JSON.parse(localStorage.getItem('favoritesData')) || [];
-    const favoritesNames =
-      JSON.parse(localStorage.getItem('favoritesNames')) || [];
-    this.setState({
-      favoritesData,
-      favoritesNames
-    });
+    const favoritesData = JSON.parse(localStorage.getItem('favoritesData'));
+
+    const favoritesNames = JSON.parse(localStorage.getItem('favoritesNames'));
+    if (favoritesData && favoritesNames) {
+      this.setState({
+        favoritesData,
+        favoritesNames
+      });
+    }
   };
 
   render() {

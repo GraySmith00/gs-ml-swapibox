@@ -100,10 +100,26 @@ describe('App component', () => {
       wrapper.instance().toggleFavorite(mockFavoriteOne);
       expect(wrapper.state().favoritesData.length).toEqual(0);
     });
+
+    it('should add favoritesData to local storage when toggleFavorite is called', () => {
+      wrapper.instance().toggleFavorite(mockFavoriteOne);
+      wrapper.instance().checkForFavorites();
+      expect(wrapper.state().favoritesData).toEqual([mockFavoriteOne]);
+    });
+
+    it('should add favoritesNames to local storage when toggleFavorite is called', () => {
+      wrapper.instance().toggleFavorite(mockFavoriteOne);
+      wrapper.instance().checkForFavorites();
+      expect(wrapper.state().favoritesNames).toEqual([mockFavoriteOne.name]);
+    });
   });
 
   describe('checkForFavorites', () => {
     it('should populate favoritesData state if it exists in localStorage', () => {
+      localStorage.setItem(
+        'favoritesNames',
+        JSON.stringify(mockFavoritesNames)
+      );
       localStorage.setItem('favoritesData', JSON.stringify(mockFavoritesData));
       wrapper.instance().checkForFavorites();
 
@@ -115,9 +131,19 @@ describe('App component', () => {
         'favoritesNames',
         JSON.stringify(mockFavoritesNames)
       );
+      localStorage.setItem('favoritesData', JSON.stringify(mockFavoritesData));
+
       wrapper.instance().checkForFavorites();
 
       expect(wrapper.state().favoritesNames).toEqual(mockFavoritesNames);
+    });
+
+    it('should not set the state if there is nothing in local storage', () => {
+      const originalState = wrapper.state();
+      wrapper.instance().checkForFavorites();
+      expect(wrapper.state().favoritesData).toEqual([]);
+      expect(wrapper.state().favoritesNames).toEqual([]);
+      expect(wrapper.state()).toEqual(originalState);
     });
   });
 

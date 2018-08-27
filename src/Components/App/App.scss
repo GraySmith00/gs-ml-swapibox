@@ -3,25 +3,14 @@
   font-family: 'Pathway Gothic One', sans-serif;
 }
 
-// .header {
-//   background-color: rgba(0, 0, 0, 0.5);
-//   padding: 20px 0 20px 0;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   font-size: 1.5em;
-//   color: #fff;
-// }
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-// .header-container,
-// .main-container {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-
-//   width: 80%;
-//   margin: 0 auto;
-// }
+  width: 80%;
+  margin: 0 auto;
+}
 
 .App-title {
   font-size: 1.5em;

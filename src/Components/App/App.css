@@ -2,6 +2,13 @@
   margin: 0 auto;
   font-family: 'Pathway Gothic One', sans-serif; }
 
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto; }
+
 .App-title {
   font-size: 1.5em; }
 

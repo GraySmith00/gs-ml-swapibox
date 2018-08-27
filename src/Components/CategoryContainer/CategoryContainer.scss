@@ -9,6 +9,11 @@
   overflow: scroll;
 }
 
+.no-favorites {
+  font-size: 2em;
+  margin: 2em 0 0 0;
+}
+
 @media screen and (max-width: 1100px) {
   .category-container {
     grid-template-columns: repeat(3, 1fr);

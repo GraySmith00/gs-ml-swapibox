@@ -31,7 +31,10 @@ class ScrollText extends Component {
     return (
       <section className="scrolltext-container">
         <div className="crawl">
-          <p>{`${quote}, ${title}, ${date}`}</p>
+          <marquee
+            behavior="scroll"
+            direction="left"
+          >{`${quote}, ${title}, ${date}`}</marquee>
         </div>
       </section>
     );

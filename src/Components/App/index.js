@@ -65,14 +65,15 @@ class App extends Component {
   };
 
   checkForFavorites = () => {
-    const favoritesData =
-      JSON.parse(localStorage.getItem('favoritesData')) || [];
-    const favoritesNames =
-      JSON.parse(localStorage.getItem('favoritesNames')) || [];
-    this.setState({
-      favoritesData,
-      favoritesNames
-    });
+    const favoritesData = JSON.parse(localStorage.getItem('favoritesData'));
+
+    const favoritesNames = JSON.parse(localStorage.getItem('favoritesNames'));
+    if (favoritesData && favoritesNames) {
+      this.setState({
+        favoritesData,
+        favoritesNames
+      });
+    }
   };
 
   render() {
@@ -87,11 +88,13 @@ class App extends Component {
       <div className="app">
         <header className="header">
           <div className="header-container">
-            <img
-              className="brand-image"
-              src={require('../../images/starWarsLogoOneLine.png')}
-              alt="star wars logo"
-            />
+            <NavLink exact to="/" className="nav-link">
+              <img
+                className="brand-image"
+                src={require('../../images/starWarsLogoOneLine.png')}
+                alt="star wars logo"
+              />
+            </NavLink>
             <nav className="nav-btns">
               <NavLink
                 exact
@@ -149,6 +152,7 @@ class App extends Component {
                       toggleFavorite={this.toggleFavorite}
                       currentData={peopleData}
                       favoritesNames={favoritesNames}
+                      category={'people'}
                     />
                   );
                 }}
@@ -163,6 +167,7 @@ class App extends Component {
                       toggleFavorite={this.toggleFavorite}
                       currentData={planetsData}
                       favoritesNames={favoritesNames}
+                      category={'planets'}
                     />
                   );
                 }}
@@ -177,6 +182,7 @@ class App extends Component {
                       toggleFavorite={this.toggleFavorite}
                       currentData={vehiclesData}
                       favoritesNames={favoritesNames}
+                      category={'vehicles'}
                     />
                   );
                 }}
@@ -189,6 +195,7 @@ class App extends Component {
                     toggleFavorite={this.toggleFavorite}
                     currentData={favoritesData}
                     favoritesNames={favoritesNames}
+                    category={'favorites'}
                   />
                 )}
               />

@@ -4,10 +4,15 @@ import PropTypes from 'prop-types';
 import CategoryCard from '../CategoryCard';
 import './CategoryContainer.css';
 
-const CategoryContainer = ({ currentData, toggleFavorite, favoritesNames }) => {
+const CategoryContainer = ({
+  currentData,
+  toggleFavorite,
+  favoritesNames,
+  category
+}) => {
   let displayCards;
 
-  if (currentData.length === 0) {
+  if (category === 'favorites' && currentData.length === 0) {
     displayCards = (
       <p className="no-favorites">
         You have not added any items to your favorites yet!
@@ -44,7 +49,8 @@ const CategoryContainer = ({ currentData, toggleFavorite, favoritesNames }) => {
 CategoryContainer.propTypes = {
   currentData: PropTypes.array.isRequired,
   toggleFavorite: PropTypes.func.isRequired,
-  favoritesNames: PropTypes.array.isRequired
+  favoritesNames: PropTypes.array.isRequired,
+  category: PropTypes.string.isRequired
 };
 
 export default CategoryContainer;

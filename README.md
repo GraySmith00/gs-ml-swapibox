@@ -32,4 +32,4 @@ npm test
 npm run eslint
 ```
 
-<img src="https://imgur.com/NUn9crT" alt="Star wars api application">
+<img src="https://i.imgur.com/NUn9crT.png" width='600px' alt="Star wars api application">

@@ -4,17 +4,36 @@ import { MemoryRouter } from 'react-router';
 import App from '../App';
 
 import { mockPeopleFetch } from '../../MockData';
+import { wrap } from 'module';
 
 describe('App component', () => {
   let wrapper;
   let mockFavoriteOne;
   let mockFavoriteTwo;
+  let mockFavoritesData;
+  let mockFavoritesNames;
 
   beforeEach(() => {
     localStorage.clear();
     mockFavoriteOne = mockPeopleFetch.results[0];
     mockFavoriteTwo = mockPeopleFetch.results[1];
-
+    mockFavoritesData = [
+      {
+        favorite: false,
+        name: 'Luke Skywalker',
+        planet: 'Tatooine',
+        population: '200000',
+        species: 'Human'
+      },
+      {
+        favorite: false,
+        name: 'C-3PO',
+        planet: 'Tatooine',
+        population: '200000',
+        species: 'Droid'
+      }
+    ];
+    mockFavoritesNames = ['Luke Skywalker', 'C-3PO'];
     wrapper = shallow(<App />);
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
@@ -83,6 +102,25 @@ describe('App component', () => {
     });
   });
 
+  describe('checkForFavorites', () => {
+    it('should populate favoritesData state if it exists in localStorage', () => {
+      localStorage.setItem('favoritesData', JSON.stringify(mockFavoritesData));
+      wrapper.instance().checkForFavorites();
+
+      expect(wrapper.state().favoritesData).toEqual(mockFavoritesData);
+    });
+
+    it('should populate favoritesNames state if it exists in localStorage', () => {
+      localStorage.setItem(
+        'favoritesNames',
+        JSON.stringify(mockFavoritesNames)
+      );
+      wrapper.instance().checkForFavorites();
+
+      expect(wrapper.state().favoritesNames).toEqual(mockFavoritesNames);
+    });
+  });
+
   describe('router', () => {
     it('should match Snapshot of landing page', () => {
       render(
@@ -114,6 +152,15 @@ describe('App component', () => {
     it('should match Snapshot of vehicles page', () => {
       render(
         <MemoryRouter initialEntries={['/vehicles']}>
+          <App />
+        </MemoryRouter>
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should match Snapshot of favorites page', () => {
+      render(
+        <MemoryRouter initialEntries={['/favorites']}>
           <App />
         </MemoryRouter>
       );

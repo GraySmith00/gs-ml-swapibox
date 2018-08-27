@@ -16,7 +16,7 @@ describe('CategoryContainer component', () => {
     mockToggleFavorite = jest.fn();
     mockCurrentData = [
       {
-        favorite: false,
+        favorite: true,
         name: 'Luke Skywalker',
         planet: 'Tatooine',
         population: '200000',

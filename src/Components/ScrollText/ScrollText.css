@@ -1,4 +1,6 @@
 .scrolltext-container {
+  display: flex;
+  align-items: center;
   width: 100%;
   font-family: 'Pathway Gothic One', sans-serif;
   overflow: hidden;
@@ -8,33 +10,9 @@
   height: 4rem;
   letter-spacing: 2px; }
 
-@keyframes scrolltext-container {
-  0% {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    visibility: visible; }
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0); } }
-
 footer {
   display: flex;
   align-items: center;
   position: fixed;
   bottom: 0;
   width: 100%; }
-
-.crawl {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  margin: auto;
-  white-space: nowrap;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-name: scrolltext-container;
-  animation-name: scrolltext-container;
-  -webkit-animation-duration: 40s;
-  animation-duration: 40s; }

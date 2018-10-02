@@ -15,14 +15,16 @@
   },
   "scripts": {
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "dev": "npm-run-all -p watch-css start-js",
+    "start": "server -s build",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "eslint": "eslint src/",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "enzyme": "^3.4.4",

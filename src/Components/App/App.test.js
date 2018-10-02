@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
 import { MemoryRouter } from 'react-router';
-import App from '../App';
 
+import App from '../App';
 import { mockPeopleFetch } from '../../MockData';
 
 describe('App component', () => {
